@@ -1,7 +1,19 @@
-@mixin poppins-regular() {
-  font-family: "Poppins Regular", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 21px;
-  color: $basic-grey;
+@mixin bebasneue-bold() {
+  font-family: "Bebas Neue Regular", "Arial", sans-serif;
 }
 
+@mixin bebasneue-regular() {
+  font-family: "Bebas Neue Bold", "Arial", sans-serif;
+}
+
+@mixin robotocondensed-light() {
+  font-family: "Roboto Condensed Light", "Arial", sans-serif;
+}
+
+@mixin robotocondensed-regular() {
+  font-family: "Roboto Condensed Regular", "Arial", sans-serif;
+}
+
+@mixin robotocondensed-bold() {
+  font-family: "Roboto Condensed Bold", "Arial", sans-serif;
+}
