@@ -58,7 +58,7 @@ const copy = (done) => {
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
     'source/img/**/*.{png,jpg,svg}',
-    'source/video/*.mp4'
+    'source/video/*.{mp4, ogg}'
   ],
   {
     base: 'source'

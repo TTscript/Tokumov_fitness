@@ -11,7 +11,12 @@ $gym-video-buttom-context: linear-gradient(97.05deg, rgba(237, 2, 51, 0.2) 17.6%
 $passes-background: rgba(248, 249, 252, 1);
 $passes-tabs-text-active: rgba(16, 38, 84, 1);
 $passes-tabs-text-passive: rgba(16, 38, 84, 0.5);
-$passes-tabs-border: rgba(209, 10, 66, 1);
+$passes-tabs-border-active: rgba(209, 10, 66, 1);
+$passes-tabs-border-passive: rgba(120, 120, 120, 0.2);
+$passes-simple-text: rgba(73, 90, 125, 1);
+$passes-price: rgba(16, 58, 174, 1);
+$passes-text-shadow: rgba(232, 232, 232, 1);
+$passes-button-hover: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
 
 $max-desktop: 1366px;
 $intermediate-tablet: 1188px;

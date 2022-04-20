@@ -1,5 +1,6 @@
 .passes {
   background-color: $passes-background;
+  margin-bottom: 250px;
 }
 
 .passes__inner {
@@ -9,7 +10,15 @@
   align-items: center;
   max-width: 1163px;
   margin: 0 auto;
-  padding: 120px 0 0;
+  padding: 120px 0 120px;
+
+  @media (max-width: $max-tablet) {
+    padding: 97px 0;
+  }
+
+  @media (max-width: $max-mobile) {
+    padding: 67px 0;
+  }
 }
 
 .passes__inner h2 {
@@ -18,10 +27,287 @@
   line-height: 49px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin: 0 0 53px;
+  margin: 0 0 40px;
+
+  @media (max-width: $max-tablet) {
+    font-size: 42px;
+    line-height: 42px;
+    margin: 0 0 33px;
+  }
+
+  @media (max-width: $max-mobile) {
+    font-size: 32px;
+    line-height: 32px;
+    margin: 0 0 23px;
+  }
+}
+
+.passes__tabs {
+  border-bottom: 2px solid $passes-tabs-border-passive;
+  margin-bottom: 37px;
+
+  @media (max-width: $max-tablet) {
+    margin-bottom: 43px;
+  }
+
+  @media (max-width: $max-mobile) {
+    margin-bottom: 32px;
+  }
 }
 
 .passes__tabs button {
+  @include robotocondensed-regular();
+  font-size: 20px;
+  line-height: 30px;
+  color: $passes-tabs-text-passive;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
+  padding: 0 0 10px;
+  margin: 0 46px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    color: $passes-tabs-text-active;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (max-width: $max-tablet) {
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 51px 0 0;
+  }
+
+  @media (max-width: $max-mobile) {
+    font-size: 16px;
+    line-height: 27px;
+    margin: 0 42px 0 0;
+  }
+}
+
+.passes__tabs button.passes__tab-active {
+  color: $passes-tabs-text-active;
+  border-bottom: 2px solid $passes-tabs-border-active;
+}
+
+.passes__cards-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 2;
+
+  @media (max-width: $max-tablet) {
+    flex-direction: column;
+  }
+}
+
+.passes__weights {
+  position: absolute;
+  top: 218px;
+  right: -290px;
+  z-index: -1;
+
+  @media (max-width: $max-tablet) {
+    top: 1210px;
+    right: -237px;
+  }
+
+  @media (max-width: $max-mobile) {
+    display: none;
+  }
+}
+
+.passes__weights img {
+  @media (max-width: $max-tablet) {
+    width: 415px;
+  }
+}
+
+.passes__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $basic-white;
+  min-width: 360px;
+  min-height: 448px;
+  margin-right: 40px;
+  cursor: pointer;
+  transition: 1s;
+  padding: 55px 0 0;
+  border: 7px solid transparent;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    border: 7px solid;
+    border-image-source: linear-gradient(148.82deg, #D10A42 0.85%, #00359F 100%);
+    border-image-slice: 1;
+    transition: 1s;
+  }
+
+  @media (max-width: $max-tablet) {
+    min-width: 442px;
+    min-height: 448px;
+    margin: 0 0 40px;
+  }
+
+  @media (max-width: $max-mobile) {
+    min-width: 290px;
+    min-height: 384px;
+    margin: 0 0 35px;
+    padding: 43px 0 0;
+  }
+}
+
+.passes__card:hover button {
+  background: $passes-button-hover;
+  border: 0;
+  color: $basic-white;
+  transition: 1s;
+}
+
+.passes__card h3 {
+  @include robotocondensed-bold();
+  font-size: 26px;
+  line-height: 29px;
+  margin: 0 0 11px;
+
+  @media (max-width: $max-mobile) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.passes__card p {
+  @include robotocondensed-regular();
+  line-height: 24px;
+  margin: 0;
+
+  &:first-of-type {
+    color: $passes-simple-text;
+    margin-bottom: 65px;
+
+    @media (max-width: $max-mobile) {
+      margin-bottom: 54px;
+    }
+  }
+
+  &:last-of-type {
+    position: relative;
+    @include robotocondensed-bold();
+    font-size: 60px;
+    line-height: 90px;
+    margin-bottom: 35px;
+    transform: translate(0);
+
+    @media (max-width: $max-mobile) {
+      font-size: 48px;
+      line-height: 72px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.passes__card span {
+  color: $passes-price;
+}
+
+.passes__coach p {
+  &:last-of-type {
+    &::before {
+      content: attr(data-content);
+      position: absolute;
+      top: -54px;
+      left: -15px;
+      color: $passes-text-shadow;
+      font-size: 100px;
+      line-height: 150px;
+      z-index: -1;
+      opacity: 0.48;
+
+      @media (max-width: $max-mobile) {
+        font-size: 80px;
+        top: -62px;
+      }
+    }
+  }
+}
+
+.passes__day p {
+  &:last-of-type {
+    &::before {
+      content: attr(data-content);
+      position: absolute;
+      top: -54px;
+      left: -15px;
+      color: $passes-text-shadow;
+      font-size: 100px;
+      line-height: 150px;
+      z-index: -1;
+      opacity: 0.48;
+
+      @media (max-width: $max-mobile) {
+        font-size: 80px;
+        top: -62px;
+      }
+    }
+  }
+}
+
+.passes__full-day p {
+  &:last-of-type {
+    &::before {
+      content: attr(data-content);
+      position: absolute;
+      top: -54px;
+      left: -15px;
+      color: $passes-text-shadow;
+      font-size: 100px;
+      line-height: 150px;
+      z-index: -1;
+      opacity: 0.48;
+
+      @media (max-width: $max-mobile) {
+        font-size: 80px;
+        top: -62px;
+      }
+    }
+  }
+}
+
+.passes__card button {
+  @include robotocondensed-bold();
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid $basic-color;
+  background-color: transparent;
+  width: 206px;
+  height: 64px;
+  cursor: pointer;
+  transition: 0.5s;
+  transition: 1s;
+
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+    transition: 1s;
+
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }

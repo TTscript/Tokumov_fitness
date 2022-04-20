@@ -1,8 +1,13 @@
 .gym {
   padding: 0 45px;
 
+  @media (max-width: $max-tablet) {
+    padding-bottom: 16px;
+  }
+
   @media (max-width: $max-mobile) {
     padding: 0;
+    padding-bottom: 70px;
   }
 }
 
