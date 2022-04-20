@@ -1,0 +1,27 @@
+.passes {
+  background-color: $passes-background;
+}
+
+.passes__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1163px;
+  margin: 0 auto;
+  padding: 120px 0 0;
+}
+
+.passes__inner h2 {
+  @include bebasneue-bold();
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 53px;
+}
+
+.passes__tabs button {
+  border: 0;
+  background-color: transparent;
+}
