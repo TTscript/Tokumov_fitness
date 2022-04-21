@@ -118,6 +118,36 @@
   }
 }
 
+.gym__picture picture {
+  width: 100%;
+}
+
+.gym__picture picture[data-picture="desktop"] {
+  @media (max-width: $max-tablet) {
+    display: none;
+  }
+}
+
+.gym__picture picture[data-picture="tablet"] {
+  display: none;
+
+  @media (max-width: $max-tablet) {
+    display: block;
+  }
+
+  @media (max-width: $max-mobile) {
+    display: none;
+  }
+}
+
+.gym__picture picture[data-picture="mobile"] {
+  display: none;
+
+  @media (max-width: $max-mobile) {
+    display: block;
+  }
+}
+
 .gym__picture img {
   height: 401px;
 

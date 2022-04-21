@@ -1,0 +1,39 @@
+.coaches {
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.coaches__inner {
+  max-width: 1260px;
+}
+
+.coaches__inner h2 {
+  @include bebasneue-bold();
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+}
+
+.coaches__slider {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.coaches__line {
+  display: flex;
+}
+
+.coaches__person-card {
+  margin-right: 40px;
+
+  &:last-child {
+    margin: 0;
+  }
+}

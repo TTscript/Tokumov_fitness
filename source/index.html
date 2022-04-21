@@ -67,17 +67,17 @@
             </p>
           </div>
           <div class="gym__picture">
-            <picture>
+            <picture data-picture="desktop">
               <!-- 1х: 660px; 2x: 1220px -->
               <source type="image/webp" srcset="img/desktop/gym.webp, img/desktop/gym@2x.webp 2x">
               <img src="img/desktop/gym.png" srcset="img/desktop/gym@2x.png 2x" width="660" height="401" alt="Тренажерный зал" data-name="gym-desktop">
             </picture>
-            <picture>
+            <picture data-picture="tablet">
               <!-- 1х: 660px; 2x: 1220px -->
               <source type="image/webp" srcset="img/tablet/gym.webp, img/tablet/gym@2x.webp 2x">
               <img src="img/tablet/gym.png" srcset="img/tablet/gym@2x.png 2x" width="678" height="345" alt="Тренажерный зал" data-name="gym-tablet">
             </picture>
-            <picture>
+            <picture data-picture="mobile">
               <!-- 1х: 660px; 2x: 1220px -->
               <source type="image/webp" srcset="img/mobile/gym.webp, img/mobile/gym@2x.webp 2x">
               <img src="img/mobile/gym.png" srcset="img/mobile/gym@2x.png 2x" width="320" height="313" alt="Тренажерный зал" data-name="gym-mobile">
@@ -105,34 +105,86 @@
         </div>
       </section>
       <section class="passes">
-        <div class="passes__inner">
-          <h2>Абонементы</h2>
-          <div class="passes__tabs">
-            <button id="tab-1" type="button">1 месяц</button>
-            <button id="tab-2" type="button">6 месяцев</button>
-            <button id="tab-3" type="button">12 месяцев</button>
+        <div class="passes__container">
+          <div class="passes__inner">
+            <h2>Абонементы</h2>
+            <div class="passes__tabs">
+              <button id="tab-1" type="button">1 месяц</button>
+              <button id="tab-2" type="button">6 месяцев</button>
+              <button id="tab-3" type="button">12 месяцев</button>
+            </div>
+            <div class="passes__cards-block">
+              <div class="passes__card passes__coach">
+                <h3>С тренером</h3>
+                <p>12 занятий</p>
+                <p data-content="5000"><span>5000</span> &#8381</p>
+                <button type="button">купить абонемент</button>
+              </div>
+              <div class="passes__card passes__day">
+                <h3>Дневной</h3>
+                <p>с <time>8:00</time> до <time>17:00</time></p>
+                <p data-content="1700"><span>1700</span> &#8381</p>
+                <button type="button">купить абонемент</button>
+              </div>
+              <div class="passes__card passes__full-day">
+                <h3>Полный день</h3>
+                <p>с <time>8:00</time> до <time>22:00</time></p>
+                <p data-content="2700"><span>2700</span> &#8381</p>
+                <button type="button">купить абонемент</button>
+              </div>
+            </div>
           </div>
-          <div class="passes__cards-block">
-            <div class="passes__weights">
-              <img src="img/desktop/weights.png" width="480" height="384" alt="Блины для штанги">
+        </div>
+      </section>
+      <section class="promo">
+        <h2 class="visually-hidden">Promo</h2>
+        <div class="promo__inner">
+          <div class="promo__supergame">
+            <div class="promo__text-block">
+              <div class="promo__main-text">
+                <h3>SUPER <br> GAMES</h3>
+                <div class="promo__date-time">
+                  <div class="promo__date-block">
+                    <h4>Дата</h4>
+                    <p>
+                      <span>7</span>
+                      <span>Марта <br> 2019</span>
+                    </p>
+                  </div>
+                  <div class="promo__time-block">
+                    <h4>Время</h4>
+                    <p><time>12:00</time></p>
+                  </div>
+                </div>
+              </div>
+              <p>Ежегодные соревнования по CrossFit</p>
+              <button type="button">заполнить заявку</button>
             </div>
-            <div class="passes__card passes__coach">
-              <h3>С тренером</h3>
-              <p>12 занятий</p>
-              <p data-content="5000"><span>5000</span> &#8381</p>
-              <button type="button">купить абонемент</button>
-            </div>
-            <div class="passes__card passes__day">
-              <h3>Дневной</h3>
-              <p>с <time>8:00</time> до <time>17:00</time></p>
-              <p data-content="1700"><span>1700</span> &#8381</p>
-              <button type="button">купить абонемент</button>
-            </div>
-            <div class="passes__card passes__full-day">
-              <h3>Полный день</h3>
-              <p>с <time>8:00</time> до <time>22:00</time></p>
-              <p data-content="2700"><span>2700</span> &#8381</p>
-              <button type="button">купить абонемент</button>
+          </div>
+          <div class="promo__picture"></div>
+        </div>
+      </section>
+      <section class="coaches">
+        <div class="coaches__inner">
+          <h2>Тренеры</h2>
+          <div class="coaches__slider">
+            <div class="coaches__line">
+              <div class="coaches__person-card coaches__anna">
+                <img src="img/desktop/coaches/anna.png" width="260" height="294" alt="Анна Павлова">
+                <h3>Анна Павлова</h3>
+              </div>
+              <div class="coaches__person-card coaches__alexey">
+                <img src="img/desktop/coaches/alexey.png" width="260" height="294" alt="Алексей Лавров">
+                <h3>Алексей Лавров</h3>
+              </div>
+              <div class="coaches__person-card coaches__alexandr">
+                <img src="img/desktop/coaches/alexandr.png" width="260" height="294" alt="Александр Пашков">
+                <h3>Александр Пашков</h3>
+              </div>
+              <div class="coaches__person-card coaches__maria">
+                <img src="img/desktop/coaches/maria.png" width="260" height="294" alt="Мария Кетова">
+                <h3>Мария Кетова</h3>
+              </div>
             </div>
           </div>
         </div>

@@ -82,3 +82,34 @@ function activateTab(quantity = 12, coach = 5000, day = 1700, fullDay = 2700) {
 }
 
 // //////////////////////////////////////////////////////////////////////T A B S//////////////////////////////////////////////////////////////////////////////////////////////////
+
+const passes = document.querySelector('.passes');
+const cardsBlock = document.querySelector('.passes__cards-block');
+const mediaPassesDesktop = window.matchMedia('(min-width: 1024px)');
+const mediaPassesTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+const mediaPassesMobile = window.matchMedia('(min-width: 481px) and (max-width: 767px)');
+const mediaPassesLowMobile = window.matchMedia('(max-width: 480px)');
+
+let width;
+
+window.addEventListener('resize',  changePassesBlock);
+
+function changePassesBlock() {
+  width = passes.offsetWidth;
+
+  if (mediaPassesDesktop.matches) {
+    cardsBlock.style.width = `${width / 1.1}px`;
+    cardsBlock.style.height = 'auto';
+  } else if (mediaPassesTablet.matches) {
+    cardsBlock.style.width = '442px';
+    cardsBlock.style.height = 'auto';
+  } else if (mediaPassesMobile.matches) {
+    cardsBlock.style.width = '442px';
+    cardsBlock.style.height = 'auto';
+  } else if (mediaPassesLowMobile.matches) {
+    cardsBlock.style.width = '100%';
+    cardsBlock.style.height = 'auto';
+  }
+}
+
+changePassesBlock();

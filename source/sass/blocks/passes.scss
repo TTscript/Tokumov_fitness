@@ -1,6 +1,33 @@
 .passes {
-  background-color: $passes-background;
-  margin-bottom: 250px;
+  background: linear-gradient(to bottom, $passes-background 1%, $passes-background 88%, $basic-white 88% $basic-white 100%) no-repeat;
+  padding: 120px 0 50px;
+
+  @media (max-width: $max-tablet) {
+    padding: 97px 0 9px;
+  }
+
+  @media (max-width: $max-mobile) {
+    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 96%, $basic-white 96% $basic-white 100%) no-repeat;
+    padding: 67px 0 0;
+  }
+}
+
+.passes__container {
+  background: url("../img/desktop/weights.png") no-repeat;
+  background-size: 477px 487px;
+  background-position: 121% 124%;
+  z-index: 2;
+  padding: 0 45px;
+
+  @media (max-width: $max-tablet) {
+    background-size: 427px 453px;
+    background-position: 123% 103%;
+  }
+
+  @media (max-width: 480px) {
+    background: unset;
+    padding: 0 15px;
+  }
 }
 
 .passes__inner {
@@ -9,16 +36,8 @@
   justify-content: flex-start;
   align-items: center;
   max-width: 1163px;
+  padding-bottom: 139px;
   margin: 0 auto;
-  padding: 120px 0 120px;
-
-  @media (max-width: $max-tablet) {
-    padding: 97px 0;
-  }
-
-  @media (max-width: $max-mobile) {
-    padding: 67px 0;
-  }
 }
 
 .passes__inner h2 {
@@ -106,27 +125,9 @@
   @media (max-width: $max-tablet) {
     flex-direction: column;
   }
-}
 
-.passes__weights {
-  position: absolute;
-  top: 218px;
-  right: -290px;
-  z-index: -1;
-
-  @media (max-width: $max-tablet) {
-    top: 1210px;
-    right: -237px;
-  }
-
-  @media (max-width: $max-mobile) {
-    display: none;
-  }
-}
-
-.passes__weights img {
-  @media (max-width: $max-tablet) {
-    width: 415px;
+  @media (max-width: 480px) {
+    min-width: 100%;
   }
 }
 
@@ -136,7 +137,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: $basic-white;
-  min-width: 360px;
+  width: 360px;
   min-height: 448px;
   margin-right: 40px;
   cursor: pointer;
@@ -162,10 +163,13 @@
   }
 
   @media (max-width: $max-mobile) {
-    min-width: 290px;
+    // min-width: 290px;
     min-height: 384px;
     margin: 0 0 35px;
     padding: 43px 0 0;
+    width: unset;
+    height: unset;
+    min-width: 100%;
   }
 }
 
