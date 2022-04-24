@@ -1,8 +1,9 @@
 .passes {
   background: linear-gradient(to bottom, $passes-background 1%, $passes-background 88%, $basic-white 88% $basic-white 100%) no-repeat;
-  padding: 120px 0 50px;
+  padding: 120px 0 92px;
 
   @media (max-width: $max-tablet) {
+    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 95%, $basic-white 95% $basic-white 100%) no-repeat;
     padding: 97px 0 9px;
   }
 
@@ -36,8 +37,16 @@
   justify-content: flex-start;
   align-items: center;
   max-width: 1163px;
-  padding-bottom: 139px;
+  padding-bottom: 147px;
   margin: 0 auto;
+
+  @media (max-width: $max-tablet) {
+    padding-bottom: 190px;
+  }
+
+  @media (max-width: $max-mobile) {
+    padding-bottom: 139px;
+  }
 }
 
 .passes__inner h2 {

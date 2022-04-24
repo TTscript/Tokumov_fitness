@@ -1,9 +1,14 @@
 .promo {
-  margin-bottom: 120px;
+  margin-bottom: 116px;
   padding: 0 45px;
+
+  @media (max-width: $max-tablet) {
+    margin-bottom: 97px;
+  }
 
   @media (max-width: $max-mobile) {
     padding: 0 15px;
+    margin-bottom: 69px;
   }
 }
 
@@ -210,7 +215,7 @@
   background-size: cover;
   background-position: center;
   width: 660px;
-  min-width: 58%;
+  min-width: 57%;
 
   @media (max-width: $max-tablet) {
     min-width: 55%;
