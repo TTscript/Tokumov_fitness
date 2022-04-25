@@ -140,6 +140,7 @@
 
 .promotion__picture img {
   vertical-align: top;
+  height: 100%;
 
   @media (max-width: $max-tablet) {
     width: 100%;

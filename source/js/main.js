@@ -142,11 +142,29 @@ function setCoachesSlider() {
 }
 
 coachesLeftArrow.addEventListener('click', () => {
+  const imgSize = document.querySelector('.coaches__person-card img').offsetWidth;
+
+  let flipSize;
+  let commonSize;
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    flipSize = (imgSize * 4) + 160;
+    commonSize = (flipSize * 2);
+  } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
+    flipSize = (imgSize * 2) + 62;
+    commonSize = (flipSize * 6) - flipSize;
+  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
+    flipSize = (imgSize * 2) + 20;
+    commonSize = (flipSize * 6) - flipSize;
+  } else if (window.matchMedia('(max-width: 599px)')) {
+    flipSize = imgSize + 10;
+    commonSize = (flipSize * 12) - flipSize;
+  }
+
   leftArrowClick = true;
   setTimeout(() => {
     rightArrowClick = false;
   }, 50);
-  leftArrow = leftArrow - 1200;
+  leftArrow = leftArrow - flipSize;
 
   function getTranslateX() {
     const style = window.getComputedStyle(coachesLine);
@@ -155,7 +173,7 @@ coachesLeftArrow.addEventListener('click', () => {
   }
 
   if (getTranslateX() >= 0) {
-    leftArrow = 2400;
+    leftArrow = commonSize;
   } else if (rightArrowClick === true) {
     leftArrow = 0;
   }
@@ -164,13 +182,31 @@ coachesLeftArrow.addEventListener('click', () => {
 });
 
 coachesRightArrow.addEventListener('click', () => {
+  const imgSize = document.querySelector('.coaches__person-card img').offsetWidth;
+
+  let flipSize;
+  let commonSize;
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    flipSize = (imgSize * 4) + 160;
+    commonSize = (flipSize * 2);
+  } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
+    flipSize = (imgSize * 2) + 62;
+    commonSize = (flipSize * 6) - flipSize;
+  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
+    flipSize = (imgSize * 2) + 20;
+    commonSize = (flipSize * 6) - flipSize;
+  } else if (window.matchMedia('(max-width: 599px)')) {
+    flipSize = imgSize + 10;
+    commonSize = (flipSize * 12) - flipSize;
+  }
+
   rightArrowClick = true;
 
   setTimeout(() => {
     leftArrowClick = false;
   }, 50);
 
-  rightArrow = rightArrow - 1200;
+  rightArrow = rightArrow - flipSize;
 
   function getTranslateX() {
     const style = window.getComputedStyle(coachesLine);
@@ -178,16 +214,21 @@ coachesRightArrow.addEventListener('click', () => {
     return matrix;
   }
 
-  if (getTranslateX() <= -2400) {
+  if (getTranslateX() <= -commonSize) {
     rightArrow = 0;
-  } else if (leftArrowClick === true) {
+  } else if (leftArrowClick === true && getTranslateX() < 0) {
     rightArrow = 0;
   }
 
   coachesLine.style.transform = `translateX(${(rightArrow)}px)`;
 });
 
+
 window.addEventListener('resize', () => {
+  changePicturesSizes();
+});
+
+function changePicturesSizes() {
   if (window.matchMedia('(min-width: 1301px)').matches) {
     coachesSlider.style.width = '1162px';
     coachesImages.forEach((item) => {
@@ -196,7 +237,6 @@ window.addEventListener('resize', () => {
     });
   } else if (window.matchMedia('(min-width: 1024px) and (max-width: 1300px)').matches) {
     sliderWidth = coaches.offsetWidth;
-    coachesContainer.style.maxWidth = `${width / 222}`;
     coachesSlider.style.maxWidth = '1162px';
     coachesSlider.style.width = `${width / 1.1}px`;
     coachesImages.forEach((item) => {
@@ -204,13 +244,34 @@ window.addEventListener('resize', () => {
       item.style.height = 'auto';
     });
   } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
-    coachesSlider.style.maxWidth = `${width / 1.7}px`;
+    coachesSlider.style.maxWidth = `${width / 1.36}px`;
     coachesImages.forEach((item) => {
-      item.style.width = `${width / 3.56}px`;
+      item.style.width = `${width / 2.9}px`;
       item.style.height = 'auto';
     });
+  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
+    coachesSlider.style.maxWidth = `${width / 1.5}px`;
+    coachesImages.forEach((item) => {
+      item.style.width = `${width / 3.1}px`;
+      item.style.height = 'auto';
+    });
+  } else if (window.matchMedia('(min-width: 350px) and (max-width: 599px)').matches) {
+    coachesSlider.style.maxWidth = `${width / 1.7}px`;
+    coachesImages.forEach((item) => {
+      item.style.width = `${width / 1.7}px`;
+      item.style.height = 'auto';
+    });
+  } else if (window.matchMedia('(max-width: 349px)').matches) {
+    coachesSlider.style.maxWidth = `${width / 1.37}px`;
+    coachesImages.forEach((item) => {
+      item.style.width = `${width / 1.4}px`;
+      item.style.height = '274px';
+    });
   }
-});
+}
+
+
+changePicturesSizes();
 
 const advantagesLeftBlock = document.querySelector('.advantages__left-block');
 const advantagesRightBlock = document.querySelector('.advantages__right-block');

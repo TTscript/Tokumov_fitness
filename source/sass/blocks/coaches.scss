@@ -40,11 +40,32 @@
 
   @media (max-width: 1290px) {
     transform: translateX(-10px);
+
+    &:hover {
+      transform: scale(1.1) translateX(-10px);
+    }
+  }
+
+  @media (max-width: $max-tablet) {
+    transform: translateX(-34px);
+
+    &:hover {
+      transform: scale(1.1) translate(-34px);
+    }
   }
 
   @media (max-width: $max-mobile) {
     background-size: 11px 32px;
   }
+
+  @media (max-width: 599px) {
+    transform: translateX(-7px);
+
+    &:hover {
+      transform: scale(1.1) translateX(-7px);
+    }
+  }
+
 }
 
 .coaches__inner button:last-of-type {
@@ -64,10 +85,26 @@
 
   @media (max-width: 1290px) {
     transform: rotate(180deg) translateX(-15px);
+
+    &:hover {
+      transform: scale(1.1) rotate(180deg) translate(-15px);
+    }
+  }
+
+  @media (max-width: $max-tablet) {
+    transform: rotate(180deg) translateX(-34px);
+
+    &:hover {
+      transform: scale(1.1) rotate(180deg) translate(-34px);
+    }
   }
 
   @media (max-width: $max-mobile) {
     background-size: 11px 32px;
+  }
+
+  @media (max-width: 599px) {
+    transform: rotate(180deg) translateX(-11px);
   }
 }
 
@@ -130,7 +167,7 @@
   }
 
   @media (max-width: $max-mobile) {
-    margin-right: 0;
+    margin-right: 10px;
   }
 }
 
@@ -177,6 +214,10 @@
 
 .coaches__person-card:hover h3 {
   bottom: 220px;
+
+  @media (max-width: 1155px) {
+    bottom: 202px;
+  }
 }
 
 .coaches__person-card p {
@@ -194,6 +235,10 @@
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+
+  @media (max-width: 1155px) {
+    bottom: 179px;
+  }
 }
 
 .coaches__person-card ul {
@@ -212,6 +257,11 @@
   min-width: 135px;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 1155px) {
+    bottom: 42px;
+    left: 53px;
+  }
 }
 
 .coaches__person-card li::marker {

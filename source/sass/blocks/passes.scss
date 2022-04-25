@@ -1,6 +1,6 @@
 .passes {
   background: linear-gradient(to bottom, $passes-background 1%, $passes-background 88%, $basic-white 88% $basic-white 100%) no-repeat;
-  padding: 120px 0 92px;
+  padding: 120px 0 0;
 
   @media (max-width: $max-tablet) {
     background: linear-gradient(to bottom, $passes-background 1%, $passes-background 95%, $basic-white 95% $basic-white 100%) no-repeat;
@@ -13,12 +13,26 @@
   }
 }
 
+.passes__limit-block {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 .passes__container {
   background: url("../img/desktop/weights.png") no-repeat;
   background-size: 477px 487px;
-  background-position: 121% 124%;
+  background-position: 104% 107%;
   z-index: 2;
-  padding: 0 45px;
+  padding: 0 100px;
+
+  @media (max-width: 1420px) {
+    background-position-x: calc(2400px - 100vw);
+  }
+
+  @media (max-width: $max-desktop) {
+    background-position: 121% 107%;
+    padding: 0 45px;
+  }
 
   @media (max-width: $max-tablet) {
     background-size: 427px 453px;
@@ -37,7 +51,7 @@
   justify-content: flex-start;
   align-items: center;
   max-width: 1163px;
-  padding-bottom: 147px;
+  padding-bottom: 240px;
   margin: 0 auto;
 
   @media (max-width: $max-tablet) {
