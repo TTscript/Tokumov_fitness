@@ -1,0 +1,126 @@
+.contacts {
+  width: 50%;
+  flex: 1;
+  border-top: 1px solid $contacts-border;
+
+  @media (max-height: $max-tablet) {
+    width: 100%;
+  }
+}
+
+.contacts__inner {
+  padding: 63px 27px 70px 124px;
+
+  @media (max-width: $max-tablet) {
+    max-width: 542px;
+    padding: 63px 20px 70px 20px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 450px) {
+    padding: 65px 15px 70px;
+  }
+}
+
+.contacts__inner h2 {
+  @include bebasneue-bold();
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  margin: 0 0 44px;
+
+  @media (max-width: $max-tablet) {
+    font-size: 42px;
+    line-height: 42px;
+    margin: 0 0 40px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.contacts__blocks-wrapper {
+  display: flex;
+  justify-content: flex-start;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
+}
+
+.contacts__inner h3 {
+  @include robotocondensed-bold();
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 3px;
+
+  @media (max-width: $max-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.contacts__inner p {
+  @include robotocondensed-regular();
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+
+  @media (max-width: $max-tablet) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.contacts__left-block {
+  border-right: 1px solid $contacts-border;
+  width: 43%;
+
+  @media (max-width: $max-tablet) {
+    width: 58%;
+  }
+
+  @media (max-width: 450px) {
+    border: 0;
+    width: 100%;
+    margin-bottom: 21px;
+  }
+}
+
+.contacts__left-block p:first-of-type {
+  margin-bottom: 18px;
+
+  @media (max-width: $max-tablet) {
+    margin-bottom: 23px;
+  }
+
+  @media (max-width: 450px) {
+    margin-bottom: 22px;
+  }
+}
+
+.contacts__right-block {
+  width: 50%;
+  padding-left: 61px;
+
+  @media (max-width: $max-tablet) {
+    padding-left: 46px;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.contacts__right-block p:first-of-type {
+  margin-bottom: 18px;
+
+  @media (max-width: $max-tablet) {
+    margin-bottom: 23px;
+  }
+}
+
+

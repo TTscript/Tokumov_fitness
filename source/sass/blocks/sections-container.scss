@@ -1,0 +1,7 @@
+.sections-container {
+  display: flex;
+
+  @media (max-width: $max-tablet) {
+    flex-direction: column;
+  }
+}

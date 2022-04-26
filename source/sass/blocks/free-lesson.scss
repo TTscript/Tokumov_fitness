@@ -1,0 +1,125 @@
+.free-lesson {
+  width: 50%;
+  flex: 1;
+  background-color: $basic-color;
+
+  @media (max-width: $max-tablet) {
+    width: 100%;
+  }
+}
+
+.free-lesson__inner {
+  max-width: 683px;
+  padding: 56px 170px 70px 103px;
+
+  @media (max-width: $max-tablet) {
+    max-width: 542px;
+    padding: 68px 48px 70px 20px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $max-mobile) {
+    padding: 68px 15px 70px 15px;
+  }
+}
+
+.free-lesson h2 {
+  @include bebasneue-bold();
+  font-size: 49px;
+  line-height: 64px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $basic-white;
+  margin: 0 0 38px;
+
+  @media (max-width: $max-tablet) {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @media (max-width: $max-mobile) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0 0 40px;
+  }
+}
+
+.shape {
+  color: $basic-white;
+  margin: 0;
+  padding: 0;
+}
+
+.shape fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.shape__inputs-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 30px;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
+}
+
+.shape__input-name-wrapper {
+  width: 46%;
+  border-bottom: 1px solid $free-lesson-border;
+  margin-right: 30px;
+
+  @media (max-width: $max-tablet) {
+    margin-right: 50px;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 37px;
+  }
+}
+
+.shape__input-phone-wrapper {
+  width: 46%;
+  border-bottom: 1px solid $free-lesson-border;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    margin-bottom: 41px;
+  }
+}
+
+.shape input {
+  background-color: transparent;
+  border: 0;
+
+  &::placeholder {
+    @include robotocondensed-regular();
+    font-size: 14px;
+    line-height: 16px;
+    color: $basic-white;
+  }
+
+  @media (max-width: $max-tablet) {
+    min-width: 100%;
+  }
+}
+
+.shape button {
+  @include robotocondensed-bold();
+  font-size: 14px;
+  line-height: 16px;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid $basic-white;
+  color: $basic-white;
+  text-transform: uppercase;
+  height: 52px;
+}

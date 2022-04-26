@@ -296,3 +296,40 @@ replaceAdvantageBlocks();
 window.addEventListener('resize', () => {
   replaceAdvantageBlocks();
 });
+
+const reviewsInner = document.querySelector('.reviews__inner');
+const reviews = Array.from(document.querySelectorAll('.reviews__review'));
+const reviewsLine = document.querySelector('.reviews__line');
+let reviewsSlider = document.querySelector('.reviews__slider');
+const reviewsLeftButton = document.querySelector('#reviews-left-button');
+const reviewsRightButton = document.querySelector('#reviews-right-button');
+
+window.addEventListener('resize', () => {
+  setTimeout(() => {
+    reviewsLine.style.transform = 'translateX(0)';
+  }, 500);
+
+  changeReviewSize();
+});
+
+
+function changeReviewSize() {
+  if (window.matchMedia('(min-width: 651px)').matches) {
+    reviewsSlider.style.maxWidth = '560px';
+    reviews.forEach((item) => {
+      item.style.width = '560px';
+      item.style.height = '242px';
+    });
+  } else if (window.matchMedia('(min-width: 320px) and (max-width: 650px)').matches) {
+    reviewsSlider.style.maxWidth = `${width / 22}px`;
+
+    reviews.forEach((item) => {
+      item.style.width = `${width / 22}px`;
+      item.style.height = 'auto';
+    });
+  }
+}
+
+changeReviewSize();
+
+// console.log(reviewsSlider);
