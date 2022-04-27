@@ -18,8 +18,8 @@
 </head>
 <body class="page-body">
   <div class="center-container">
-    <main class="page-main">
-      <section class="main-block">
+    <main id="fullpage" class="page-main">
+      <section class="main-block section">
           <header class="main-block__header">
             <a>
               <svg width="86" height="20">
@@ -54,7 +54,7 @@
             </div>
           </div>
       </section>
-      <section class="gym">
+      <section class="gym section">
         <div class="gym__inner">
           <div class="gym__text-block">
             <h2>Тренажерный зал</h2>
@@ -104,7 +104,7 @@
           </div>
         </div>
       </section>
-      <section id="passes" class="passes">
+      <section id="passes" class="passes section">
         <div class="passes__limit-block">
           <div class="passes__container">
             <div class="passes__inner">
@@ -138,7 +138,7 @@
           </div>
         </div>
       </section>
-      <section class="promo">
+      <section class="promo section">
         <h2 class="visually-hidden">Promo</h2>
         <div class="promo__inner">
           <div class="promo__supergame">
@@ -166,7 +166,7 @@
           <div class="promo__picture"></div>
         </div>
       </section>
-      <section class="coaches">
+      <section class="coaches section">
         <div class="coaches__inner">
           <h2>Тренеры</h2>
           <div class="coaches__container">
@@ -347,7 +347,7 @@
           </div>
         </div>
       </section>
-      <section class="advantages">
+      <section class="advantages section">
         <h2>Наши преимущества</h2>
         <div class="advantages__inner">
           <div class="advantages__left-block">
@@ -388,7 +388,7 @@
           </div>
         </div>
       </section>
-      <section class="promotion">
+      <section class="promotion section">
         <h2>Акции</h2>
         <div class="promotion__inner">
           <div class="promotion__left-block">
@@ -427,7 +427,7 @@
           </div>
         </div>
       </section>
-      <section class="reviews">
+      <section class="reviews section">
         <h2>Отзывы</h2>
         <div class="reviews__container">
           <button id="reviews-left-arrow" type="button" aria-label="Левая стрелка"></button>
@@ -451,7 +451,7 @@
           <button id="reviews-right-arrow" type="button" aria-label="Правая стрелка"></button>
         </div>
       </section>
-      <div class="sections-container">
+      <div class="sections-container section">
         <section class="free-lesson">
           <div class="free-lesson__inner">
             <h2>БЕСПЛАТНОЕ занятие </h2>
@@ -493,47 +493,53 @@
           </div>
         </section>
       </div>
-    </main>
-    <footer class="page-footer">
-      <div class="page-footer__inner">
-        <div id="footer-logo" class="page-footer__logo">
-          <a>
-            <svg width="86" height="20">
-              <use xlink:href="img/svgsprite.svg#logo"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="page-footer__nav">
-          <nav>
-            <ul>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Абонементы</a></li>
-            </ul>
-            <ul>
-              <li><a href="#">Акции</a></li>
-              <li><a href="#">Тренеры</a></li>
-              <li><a href="#">Расписание</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="socials">
-          <div class="socials__inner">
-            <div class="socials__item socials__vkontakte">
-              <p><a href="https://vk.com"></a></p>
-            </div>
-            <div class="socials__item socials__instagram">
-              <p><a href="https://instagram.com"></a></p>
-            </div>
-            <div class="socials__item socials__facebook">
-              <p><a href="https://facebook.com"></a></p>
+      <footer class="page-footer section">
+        <div class="page-footer__inner">
+          <div id="footer-logo" class="page-footer__logo">
+            <a>
+              <svg width="86" height="20">
+                <use xlink:href="img/svgsprite.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="page-footer__nav">
+            <nav>
+              <ul>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Абонементы</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">Тренеры</a></li>
+                <li><a href="#">Расписание</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="socials">
+            <div class="socials__inner">
+              <div class="socials__item socials__vkontakte">
+                <p><a href="https://vk.com"></a></p>
+              </div>
+              <div class="socials__item socials__instagram">
+                <p><a href="https://instagram.com"></a></p>
+              </div>
+              <div class="socials__item socials__facebook">
+                <p><a href="https://facebook.com"></a></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
   </div>
   <script src="js/main.js" type="module"></script>
   <script src="js/vendor.js" type="module"></script>
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.6/fullpage.min.js"></script>
+  <script>
+      new fullpage('#fullpage', {
+          autoScrolling: true
+      });
+  </script>
 </body>
 </html>
 
