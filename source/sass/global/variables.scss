@@ -1,11 +1,11 @@
-$basic-white: #FFFFFF;
+$basic-white: #ffffff;
 $basic-color: rgba(16, 38, 84, 1);
 
-$main-block-background: conic-gradient(from 130.31deg at 16.03% 39.06%, #B80027 -46.69deg, #003D85 32.24deg, #B80027 313.31deg, #003D85 392.24deg);
+$main-block-background: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
 $main-block-button-hover: rgba(230, 19, 4, 1);
 $main-block-phone-number-hover: rgba(16, 75, 163, 1);
 
-$gym-video-button: linear-gradient(44.89deg, #003D85 25.38%, #B80027 74.89%);
+$gym-video-button: linear-gradient(44.89deg, #003d85 25.38%, #b80027 74.89%);
 $gym-video-buttom-context: linear-gradient(97.05deg, rgba(237, 2, 51, 0.2) 17.6%, rgba(0, 62, 183, 0.2) 95.31%);
 
 $passes-background: rgba(248, 249, 252, 1);
@@ -16,7 +16,8 @@ $passes-tabs-border-passive: rgba(120, 120, 120, 0.2);
 $passes-simple-text: rgba(73, 90, 125, 1);
 $passes-price: rgba(16, 58, 174, 1);
 $passes-text-shadow: rgba(232, 232, 232, 1);
-$passes-button-hover: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+$passes-button-hover: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+$passes-image-source: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
 
 $promo-supergame: rgba(237, 2, 51, 1);
 $promo-button-hover: rgba(13, 11, 115, 0.96);
@@ -24,16 +25,20 @@ $promo-button-hover: rgba(13, 11, 115, 0.96);
 $advantages-backgound: rgba(248, 249, 252, 1);
 $advantage-central-block: rgba(28, 51, 116, 1);
 $advantages-border: rgba(209, 10, 66, 0.2);
-$advantages-gradient: linear-gradient(142.51deg, #D10A42 0%, #0041CA 87.33%);
+$advantages-gradient: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
 
 $promotion-red-block: rgba(237, 2, 51, 1);
-$promotion-gradient: linear-gradient(148.82deg, #D10A42 0.85%, #00359F 100%);
+$promotion-gradient: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
 
 $reviews-background: rgba(28, 51, 116, 1);
 
 $free-lesson-border: rgba(116, 129, 156, 1);
 
+$shape-error: rgb(170, 16, 16);
+
 $contacts-border: rgba(116, 129, 156, 1);
+
+$footer: rgba(3, 10, 26, 1);
 
 $max-desktop: 1366px;
 $intermediate-tablet: 1188px;

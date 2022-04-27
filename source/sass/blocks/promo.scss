@@ -31,10 +31,7 @@
 
 .promo__supergame {
   background-color: $promo-supergame;
-  // min-width: 500px;
-  // min-height: 500px;
   width: 43%;
-  // flex: 1;
 
   @media (max-width: $max-tablet) {
     width: 74%;
@@ -42,7 +39,7 @@
 
   @media (max-width: 500px) {
     width: 100%;
-    padding-bottom: 41px;
+    padding-bottom: 14px;
   }
 }
 
@@ -76,21 +73,25 @@
   }
 }
 
-.promo__text-block button {
+.promo__application a {
   @include robotocondensed-bold();
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.05em;
   min-width: 343px;
   min-height: 67px;
+  display: block;
   border: 4px solid $basic-white;
   background-color: transparent;
   color: $basic-white;
   text-transform: uppercase;
+  text-align: center;
   cursor: pointer;
+  padding-top: 20px;
 
   &:hover {
-    background-color: $promo-button-hover;
+    background-color: $basic-white;
+    color: $promo-supergame;
   }
 
   &:active {
@@ -103,6 +104,7 @@
     border-width: 2px;
     min-width: 202px;
     min-height: 39px;
+    padding-top: 12px;
   }
 }
 
@@ -178,9 +180,8 @@
 
     @media (max-width: $max-tablet) {
       font-size: 24px;
-      line-height: 36px;
-      margin-right: 4px;
       line-height: 28px;
+      margin-right: 4px;
     }
   }
 
@@ -211,11 +212,17 @@
 }
 
 .promo__picture {
-  background: url("../img/desktop/promo.png");
+  background: $basic-color url("../img/desktop/promo.png");
   background-size: cover;
   background-position: center;
   width: 660px;
   min-width: 57%;
+
+  @media (min-resolution: 2dppx) {
+    background: url("../img/desktop/promo@2x.png");
+    background-size: cover;
+    background-position: center;
+  }
 
   @media (max-width: $max-tablet) {
     min-width: 55%;

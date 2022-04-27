@@ -1,14 +1,17 @@
 .passes {
-  background: linear-gradient(to bottom, $passes-background 1%, $passes-background 88%, $basic-white 88% $basic-white 100%) no-repeat;
+  background: linear-gradient(to bottom, $passes-background 1%, $passes-background 88%, $basic-white 88%, $basic-white 100%);
+  background-repeat: no-repeat;
   padding: 120px 0 0;
 
   @media (max-width: $max-tablet) {
-    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 95%, $basic-white 95% $basic-white 100%) no-repeat;
+    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 95%, $basic-white 95%, $basic-white 100%);
+    background-repeat: no-repeat;
     padding: 97px 0 9px;
   }
 
   @media (max-width: $max-mobile) {
-    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 96%, $basic-white 96% $basic-white 100%) no-repeat;
+    background: linear-gradient(to bottom, $passes-background 1%, $passes-background 96%, $basic-white 96%, $basic-white 100%);
+    background-repeat: no-repeat;
     padding: 67px 0 0;
   }
 }
@@ -174,7 +177,7 @@
 
   &:hover {
     border: 7px solid;
-    border-image-source: linear-gradient(148.82deg, #D10A42 0.85%, #00359F 100%);
+    border-image-source: $passes-image-source;
     border-image-slice: 1;
     transition: 1s;
   }
@@ -186,7 +189,6 @@
   }
 
   @media (max-width: $max-mobile) {
-    // min-width: 290px;
     min-height: 384px;
     margin: 0 0 35px;
     padding: 43px 0 0;
@@ -196,7 +198,7 @@
   }
 }
 
-.passes__card:hover button {
+.passes__card:hover a {
   background: $passes-button-hover;
   border: 0;
   color: $basic-white;
@@ -230,8 +232,8 @@
   }
 
   &:last-of-type {
-    position: relative;
     @include robotocondensed-bold();
+    position: relative;
     font-size: 60px;
     line-height: 90px;
     margin-bottom: 35px;
@@ -312,29 +314,35 @@
   }
 }
 
-.passes__card button {
-  @include robotocondensed-bold();
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 2px solid $basic-color;
-  background-color: transparent;
+.passes__card div {
+
   width: 206px;
   height: 64px;
   cursor: pointer;
-  transition: 0.5s;
   transition: 1s;
 
 
   &:hover {
     opacity: 0.8;
-    transition: 0.5s;
     transition: 1s;
-
   }
 
   &:active {
     opacity: 0.5;
   }
+}
+
+.passes__card a {
+  @include robotocondensed-bold();
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $basic-color;
+  border: 2px solid $basic-color;
+  background-color: transparent;
+  display: block;
+  min-height: 64px;
+  text-align: center;
+  padding-top: 23px;
 }

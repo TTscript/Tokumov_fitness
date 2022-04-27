@@ -1,0 +1,150 @@
+.socials {
+  margin: 0;
+  padding: 0;
+}
+
+.socials__inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translate(12px, -4px);
+
+  @media (max-width: 365px) {
+    transform: unset;
+  }
+}
+
+.socials p {
+  margin: 0;
+}
+
+.socials__item {
+  margin-right: 25px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (max-width: $max-tablet) {
+    margin-right: 20px;
+  }
+
+  @media (max-width: 365px) {
+    margin-right: 41px;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.socials__vkontakte {
+  position: relative;
+  width: 24px;
+  height: 13px;
+}
+
+.socials__vkontakte a {
+  display: block;
+  width: 24px;
+  height: 13px;
+
+  @media (max-width: 365px) {
+    width: 32px;
+    height: 17px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask: url("../img/vkontakte.svg");
+    mask: url("../img/vkontakte.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-size: 24px 13px;
+    width: 24px;
+    height: 13px;
+    background-color: $basic-white;
+
+    @media (max-width: 365px) {
+      width: 32px;
+      height: 17px;
+    }
+  }
+}
+
+.socials__instagram {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.socials__instagram a {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: 365px) {
+    width: 27px;
+    height: 27px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask: url("../img/instagram.svg");
+    mask: url("../img/instagram.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+    background-color: $basic-white;
+
+    @media (max-width: 365px) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
+
+.socials__facebook {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.socials__facebook a {
+  display: block;
+  width: 12px;
+  height: 24px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask: url("../img/facebook.svg");
+    mask: url("../img/facebook.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-repeat: no-repeat;
+    background-size: 12px 24px;
+    width: 12px;
+    height: 24px;
+    background-color: $basic-white;
+
+    @media (max-width: 365px) {
+      width: 14px;
+      height: 27px;
+    }
+  }
+}

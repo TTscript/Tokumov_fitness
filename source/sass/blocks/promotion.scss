@@ -73,7 +73,7 @@
 
   @media (max-width: $max-tablet) {
     width: 41%;
-    flex:none;
+    flex: none;
   }
 
   @media (max-width: $max-mobile) {
@@ -91,6 +91,24 @@
   margin: 0;
 
   @media (max-width: $max-mobile) {
+    margin: 0 auto;
+  }
+}
+
+.promotion__red-block a {
+  color: $basic-white;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.promotion__season-ticket {
+  @media (max-width: $max-tablet) {
     margin: 0 auto;
   }
 }
@@ -247,6 +265,14 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-decoration: underline;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .promotion__discount {
@@ -304,4 +330,12 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-decoration: underline;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }

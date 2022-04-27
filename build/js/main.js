@@ -39,9 +39,9 @@ gym.addEventListener('mouseover', (e) => {
   }
 });
 
-// //////////////////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //////////////////////////////////////////////////////////////////////T A B S//////////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////T A B S//////////////////////////////////////////////////////////////////////////////////////////////////
 
 const tabs = Array.from(document.querySelectorAll('.passes__tabs button'));
 const tabOne = document.querySelector('#tab-1');
@@ -81,9 +81,9 @@ function activateTab(quantity = 12, coach = 5000, day = 1700, fullDay = 2700) {
   fullDayPriceShadow.dataset.content = fullDay;
 }
 
-// //////////////////////////////////////////////////////////////////////T A B S//////////////////////////////////////////////////////////////////////////////////////////////////
+// //////////////////////////// ///////////////////////////////T A B S//////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //////////////////////////////////////////////////////////////////////P A S S E S    C A R D S     S I Z E//////////////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////P A S S E S    C A R D S     S I Z E//////////////////////////////////////////////////////////////////////////////////////////////////
 
 const passes = document.querySelector('.passes');
 const cardsBlock = document.querySelector('.passes__cards-block');
@@ -116,20 +116,25 @@ function changePassesBlock() {
 
 changePassesBlock();
 
-// //////////////////////////////////////////////////////////////////////P A S S E S    C A R D S     S I Z E//////////////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////P A S S E S    C A R D S     S I Z E//////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //////////////////////////////////////////////////////////////////////C O A C H E S     S L I D E R//////////////////////////////////////////////////////////////////////////////////////////////////
-const coaches = document.querySelector('.coaches');
+////////////////////////////////////////C O A C H E S   S L I D E R/////////////////////////////////////////////////////////////
+
 const coachesSlider = document.querySelector('.coaches__slider');
 const coachesLine = document.querySelector('.coaches__line');
+const coachesCard = document.querySelectorAll('.coaches__person-card');
 const coachesImages = document.querySelectorAll('.coaches__person-card img');
 const coachesLeftArrow = document.querySelector('#coaches-left-arrow');
 const coachesRightArrow = document.querySelector('#coaches-right-arrow');
-const coachesContainer = document.querySelector('.coaches__container');
+
+coachesCard.forEach((item) => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('coaches__person-card--active');
+  });
+});
 
 let leftArrow = 0;
 let rightArrow = 0;
-let sliderWidth;
 let leftArrowClick = false;
 let rightArrowClick = false;
 
@@ -236,7 +241,6 @@ function changePicturesSizes() {
       item.style.height = '294px';
     });
   } else if (window.matchMedia('(min-width: 1024px) and (max-width: 1300px)').matches) {
-    sliderWidth = coaches.offsetWidth;
     coachesSlider.style.maxWidth = '1162px';
     coachesSlider.style.width = `${width / 1.1}px`;
     coachesImages.forEach((item) => {
@@ -270,16 +274,14 @@ function changePicturesSizes() {
   }
 }
 
-
 changePicturesSizes();
+
+////////////////////////////////////////C O A C H E S   S L I D E R/////////////////////////////////////////////////////////////
 
 const advantagesLeftBlock = document.querySelector('.advantages__left-block');
 const advantagesRightBlock = document.querySelector('.advantages__right-block');
-const advantageArea = document.querySelector('.advantages__area');
 const advantageComfort = document.querySelector('.advantages__comfort');
 const advantageParking = document.querySelector('.advantages__parking');
-// const advantageExperience = document.querySelector('.advantages__experience');
-
 
 function replaceAdvantageBlocks() {
   if (window.matchMedia('(min-width: 1024px)').matches) {
@@ -297,12 +299,13 @@ window.addEventListener('resize', () => {
   replaceAdvantageBlocks();
 });
 
-const reviewsInner = document.querySelector('.reviews__inner');
+const reviewsSection = document.querySelector('.reviews');
+const review = document.querySelector('.reviews__review');
 const reviews = Array.from(document.querySelectorAll('.reviews__review'));
 const reviewsLine = document.querySelector('.reviews__line');
-let reviewsSlider = document.querySelector('.reviews__slider');
-const reviewsLeftButton = document.querySelector('#reviews-left-button');
-const reviewsRightButton = document.querySelector('#reviews-right-button');
+const reviewsLeftButton = document.querySelector('#reviews-left-arrow');
+const reviewsRightButton = document.querySelector('#reviews-right-arrow');
+const reviewsSlider = document.querySelector('.reviews__slider');
 
 window.addEventListener('resize', () => {
   setTimeout(() => {
@@ -321,15 +324,146 @@ function changeReviewSize() {
       item.style.height = '242px';
     });
   } else if (window.matchMedia('(min-width: 320px) and (max-width: 650px)').matches) {
-    reviewsSlider.style.maxWidth = `${width / 22}px`;
 
-    reviews.forEach((item) => {
-      item.style.width = `${width / 22}px`;
-      item.style.height = 'auto';
-    });
+    if (review.offsetWidth <= 226 && reviewsSection.offsetWidth <= 440) {
+      return true;
+    } else {
+      reviewsSlider.style.maxWidth = `${width / 2}px`;
+
+      reviews.forEach((item) => {
+        item.style.width = `${width / 2}px`;
+        item.style.height = 'auto';
+      });
+    }
   }
 }
 
+reviews.forEach((item) => {
+  reviewsSlider.style.maxWidth = '226px';
+  item.style.width = '226px';
+});
+
 changeReviewSize();
 
-// console.log(reviewsSlider);
+const footerInner = document.querySelector('.page-footer__inner');
+const footerLogo = document.querySelector('#footer-logo');
+const footerList = document.querySelector('.page-footer ul');
+
+window.addEventListener('resize', () => {
+  addLogoToList();
+});
+
+function addLogoToList() {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    footerInner.prepend(footerLogo);
+  } else if (window.matchMedia('(min-width: 320px) and (max-width: 767px)').matches) {
+    footerList.prepend(footerLogo);
+  }
+}
+
+addLogoToList();
+
+window.addEventListener('resize', setCoachesSlider);
+
+reviewsLeftButton.addEventListener('click', () => {
+  const flipSize = review.offsetWidth;
+
+  leftArrowClick = true;
+  setTimeout(() => {
+    rightArrowClick = false;
+  }, 50);
+  leftArrow = leftArrow - flipSize;
+
+  function getTranslateX() {
+    const style = window.getComputedStyle(reviewsLine);
+    const matrix = new DOMMatrixReadOnly(style.transform).m41;
+    return matrix;
+  }
+
+  if (getTranslateX() >= 0) {
+    leftArrow = flipSize * 2;
+  } else if (rightArrowClick === true) {
+    leftArrow = 0;
+  }
+
+  reviewsLine.style.transform = `translateX(${-(leftArrow)}px)`;
+});
+
+reviewsRightButton.addEventListener('click', () => {
+  const flipSize = review.offsetWidth;
+
+  rightArrowClick = true;
+
+  setTimeout(() => {
+    leftArrowClick = false;
+  }, 50);
+
+  rightArrow = rightArrow - flipSize;
+
+  function getTranslateX() {
+    const style = window.getComputedStyle(reviewsLine);
+    const matrix = new DOMMatrixReadOnly(style.transform).m41;
+    return matrix;
+  }
+
+  if (getTranslateX() <= -flipSize * 2) {
+    rightArrow = 0;
+  } else if (leftArrowClick === true && getTranslateX() < 0) {
+    rightArrow = 0;
+  }
+
+  reviewsLine.style.transform = `translateX(${(rightArrow)}px)`;
+});
+
+///////////////////////////////////////////////////////////////V A L I D A T I O N//////////////////////////////////////////////////////////////////////
+
+const shape = document.querySelector('#shape');
+const nameWrapper = document.querySelector('.shape__input-name-wrapper');
+const shapeName = document.querySelector('#input-name');
+const phoneWrapper = document.querySelector('.shape__input-phone-wrapper');
+const shapePhone = document.querySelector('#input-phone');
+
+function validateName(name) {
+  const re = /^[a-z\d. !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~А-яЁё]{3,}$/i;
+  return re.test(String(name));
+}
+
+function validatePhone(phone) {
+  const re = /^[a-z\d. !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~А-яЁё]{3,}$/i;
+  return re.test(String(phone));
+}
+
+shape.onsubmit = function() {
+  const nameVal = shapeName.value,
+    telVal = shapePhone.value;
+
+  if (nameVal === '') {
+    nameWrapper.classList.add('shape__error');
+    return false;
+  } else {
+    nameWrapper.classList.remove('shape__error');
+  }
+
+  if (!validateName(nameVal)) {
+    nameWrapper.classList.add('shape__error');
+    return false;
+  } else {
+    nameWrapper.classList.remove('shape__error');
+  }
+
+  if (!validatePhone(telVal)) {
+    phoneWrapper.classList.add('shape__error');
+    return false;
+  } else {
+    phoneWrapper.classList.remove('shape__error');
+  }
+
+  if (telVal === '' || telVal.length < 17) {
+    phoneWrapper.classList.add('shape__error');
+    return false;
+  } else {
+    phoneWrapper.classList.remove('shape__error');
+  }
+};
+
+///////////////////////////////////////////////////////////////V A L I D A T I O N//////////////////////////////////////////////////////////////////////

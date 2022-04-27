@@ -9,16 +9,16 @@
 }
 
 .contacts__inner {
-  padding: 63px 27px 70px 124px;
+  padding: 63px 27px 65px 124px;
 
   @media (max-width: $max-tablet) {
     max-width: 542px;
-    padding: 63px 20px 70px 20px;
+    padding: 63px 20px 65px 20px;
     margin: 0 auto;
   }
 
   @media (max-width: 450px) {
-    padding: 65px 15px 70px;
+    padding: 65px 15px 65px;
   }
 }
 
@@ -32,7 +32,7 @@
   @media (max-width: $max-tablet) {
     font-size: 42px;
     line-height: 42px;
-    margin: 0 0 40px;
+    margin: 0 0 37px;
   }
 
   @media (max-width: 450px) {
@@ -123,4 +123,14 @@
   }
 }
 
+.contacts__right-block a {
+  color: $basic-color;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

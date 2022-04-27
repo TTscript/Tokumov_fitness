@@ -26,7 +26,6 @@
 }
 
 .gym__text-block {
-  max-width: 355px;
   max-width: 415px;
   padding: 44px 0 0 60px;
 
@@ -182,6 +181,7 @@
 
 .gym__picture img[data-name="gym-mobile"] {
   display: none;
+
   @media (max-width: $max-mobile) {
     display: flex;
     width: 100%;
@@ -197,7 +197,7 @@
   width: 364px;
   height: 228px;
   text-align: center;
-  transform: translate(40px,-113px);
+  transform: translate(40px, -113px);
   margin: 0 auto;
 
   @media (max-width: 1170px) {
@@ -208,7 +208,7 @@
     left: 0;
     width: 266px;
     height: 167px;
-    transform: translate(0px,-84px);
+    transform: translate(0, -84px);
   }
 
   @media (max-width: 440px) {
@@ -279,7 +279,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: black;
   z-index: 21;
   width: 72px;
   height: 72px;

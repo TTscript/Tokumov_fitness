@@ -28,8 +28,7 @@
   cursor: pointer;
   min-width: 32px;
   min-height: 200px;
-  background-color: transparent;
-  background: url("../img/slider-arrow.svg") no-repeat;
+  background: transparent url("../img/slider-arrow.svg") no-repeat;
   background-position: 50% 50%;
   transform: translateX(-32px);
   border: 0;
@@ -65,7 +64,6 @@
       transform: scale(1.1) translateX(-7px);
     }
   }
-
 }
 
 .coaches__inner button:last-of-type {
@@ -73,8 +71,7 @@
   cursor: pointer;
   min-width: 32px;
   min-height: 200px;
-  background-color: transparent;
-  background: url("../img/slider-arrow.svg") no-repeat;
+  background: transparent url("../img/slider-arrow.svg") no-repeat;
   background-position: 50% 50%;
   transform: rotate(180deg) translateX(-31px);
   border: 0;
@@ -105,6 +102,10 @@
 
   @media (max-width: 599px) {
     transform: rotate(180deg) translateX(-11px);
+
+    &:hover {
+      transform: scale(1.1) rotate(180deg) translate(-11px);
+    }
   }
 }
 
@@ -187,15 +188,32 @@
 }
 
 .coaches__person-card:hover {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $basic-color;
-    width: 100%;
-    height: 100%;
-    opacity: 0.89;
+  @media (min-width: 1024px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $basic-color;
+      width: 100%;
+      height: 100%;
+      opacity: 0.89;
+    }
+  }
+}
+
+.coaches__person-card.coaches__person-card--active {
+  @media (max-width: 1023px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $basic-color;
+      width: 100%;
+      height: 100%;
+      opacity: 0.89;
+    }
   }
 }
 
@@ -213,9 +231,17 @@
 }
 
 .coaches__person-card:hover h3 {
-  bottom: 220px;
+  @media (min-width: 1024px) {
+    bottom: 220px;
+  }
 
-  @media (max-width: 1155px) {
+  @media (min-width: $max-desktop) and (max-width: 1155px) {
+    bottom: 202px;
+  }
+}
+
+.coaches__person-card.coaches__person-card--active h3 {
+  @media (max-width: 1023px) {
     bottom: 202px;
   }
 }
@@ -225,19 +251,40 @@
 }
 
 .coaches__person-card:hover p {
-  @include robotocondensed-regular();
-  font-size: 16px;
-  line-height: 24px;
-  color: $basic-white;
-  display: block;
-  position: absolute;
-  bottom: 199px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
+  @media (min-width: 1024px) {
+    @include robotocondensed-regular();
+    font-size: 16px;
+    line-height: 24px;
+    color: $basic-white;
+    display: block;
+    position: absolute;
+    bottom: 199px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 
-  @media (max-width: 1155px) {
-    bottom: 179px;
+    @media (max-width: 1155px) {
+      bottom: 179px;
+    }
+  }
+}
+
+.coaches__person-card.coaches__person-card--active p {
+  @media (max-width: $max-tablet) {
+    @include robotocondensed-regular();
+    font-size: 16px;
+    line-height: 24px;
+    color: $basic-white;
+    display: block;
+    position: absolute;
+    bottom: 199px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+
+    @media (max-width: 1155px) {
+      bottom: 179px;
+    }
   }
 }
 
@@ -246,21 +293,44 @@
 }
 
 .coaches__person-card:hover ul {
-  @include robotocondensed-regular();
-  font-size: 14px;
-  line-height: 26px;
-  color: $basic-white;
-  display: block;
-  position: absolute;
-  left: 73px;
-  bottom: 57px;
-  min-width: 135px;
-  padding: 0;
-  margin: 0;
+  @media (min-width: 1024px) {
+    @include robotocondensed-regular();
+    font-size: 14px;
+    line-height: 26px;
+    color: $basic-white;
+    display: block;
+    position: absolute;
+    left: 73px;
+    bottom: 57px;
+    min-width: 135px;
+    padding: 0;
+    margin: 0;
 
-  @media (max-width: 1155px) {
-    bottom: 42px;
-    left: 53px;
+    @media (max-width: 1155px) {
+      bottom: 42px;
+      left: 53px;
+    }
+  }
+}
+
+.coaches__person-card.coaches__person-card--active ul {
+  @media (max-width: 1023px) {
+    @include robotocondensed-regular();
+    font-size: 14px;
+    line-height: 26px;
+    color: $basic-white;
+    display: block;
+    position: absolute;
+    left: 73px;
+    bottom: 57px;
+    min-width: 135px;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 1155px) {
+      bottom: 42px;
+      left: 53px;
+    }
   }
 }
 
@@ -268,5 +338,3 @@
   font-size: 20px;
   border-radius: 50%;
 }
-
-

@@ -24,10 +24,11 @@
 
   @media (max-width: $max-tablet) {
     display: inline-block;
+    vertical-align: middle;
     font-size: 42px;
     line-height: 42px;
     padding-left: 181px;
-    margin: 0px 0 43px;
+    margin: 0 0 43px;
   }
 
   @media (max-width: $max-mobile) {
@@ -119,7 +120,6 @@
   @media (max-width: $max-mobile) {
     flex-direction: column;
     text-align: center;
-    margin-right: 0;
     margin: 0 0 23px;
   }
 }
@@ -367,6 +367,5 @@
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 3px;
-
   }
 }

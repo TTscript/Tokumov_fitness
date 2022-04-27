@@ -6,9 +6,14 @@
   }
 
   @media (max-width: $max-mobile) {
-    margin-bottom: 164px;
+    margin-bottom: 70px;
   }
- }
+
+  @media (max-width: 680px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .reviews h2 {
   @include bebasneue-bold();
@@ -45,8 +50,7 @@
   cursor: pointer;
   min-width: 32px;
   min-height: 200px;
-  background-color: transparent;
-  background: url("../img/slider-arrow.svg") no-repeat;
+  background: transparent url("../img/slider-arrow.svg") no-repeat;
   background-position: 50% 50%;
   transform: translateX(-32px);
   border: 0;
@@ -57,11 +61,19 @@
 
   @media (max-width: 1290px) {
     transform: translateX(-37px);
+
+    &:hover {
+      transform: scale(1.1) translateX(-37px);
+    }
   }
 
   @media (max-width: $max-mobile) {
-    transform: translateX(0px);
+    transform: translateX(0);
     margin-right: 14px;
+
+    &:hover {
+      transform: scale(1.1) translateX(0);
+    }
   }
 
   @media (max-width: 450px) {
@@ -75,8 +87,7 @@
   cursor: pointer;
   min-width: 32px;
   min-height: 200px;
-  background-color: transparent;
-  background: url("../img/slider-arrow.svg") no-repeat;
+  background: transparent url("../img/slider-arrow.svg") no-repeat;
   background-position: 50% 50%;
   transform: rotate(180deg) translateX(-31px);
   border: 0;
@@ -87,11 +98,19 @@
 
   @media (max-width: 1290px) {
     transform: rotate(180deg) translateX(-34px);
+
+    &:hover {
+      transform: scale(1.1) rotate(180deg) translateX(-34px);
+    }
   }
 
   @media (max-width: $max-mobile) {
-    transform: rotate(180deg) translateX(0px);
+    transform: rotate(180deg) translateX(0);
     margin-right: 14px;
+
+    &:hover {
+      transform: scale(1.1) rotate(180deg) translateX(0);
+    }
   }
 
   @media (max-width: 450px) {
@@ -104,10 +123,15 @@
   max-width: 566px;
   max-height: 242px;
   overflow: hidden;
+
+  @media (max-width: 680px) {
+    max-height: unset;
+  }
 }
 
 .reviews__line {
   display: flex;
+  transition: 0.5s;
 }
 
 .reviews__review {
@@ -124,8 +148,8 @@
 }
 
 .reviews__review h3 {
-  position: relative;
   @include robotocondensed-bold();
+  position: relative;
   font-size: 20px;
   line-height: 30px;
   color: $basic-white;
@@ -142,8 +166,8 @@
 
     @media (max-width: $max-mobile) {
       display: inline-block;
+      vertical-align: middle;
       position: unset;
-      margin-right: 17px;
     }
 
     @media (max-width: 480px) {
@@ -161,6 +185,10 @@
     margin: 0 0 7px;
   }
 }
+
+// .reviews__review span {
+//   transform: translateX(15px)
+// }
 
 .reviews__review p {
   @include robotocondensed-regular();
