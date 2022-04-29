@@ -212,14 +212,14 @@
 }
 
 .promo__picture {
-  background: $basic-color url("../img/desktop/promo.png");
+  background: $promo-background url("../img/desktop/promo.png");
   background-size: cover;
   background-position: center;
   width: 660px;
   min-width: 57%;
 
   @media (min-resolution: 2dppx) {
-    background: url("../img/desktop/promo@2x.png");
+    background: $promo-background url("../img/desktop/promo@2x.png");
     background-size: cover;
     background-position: center;
   }
