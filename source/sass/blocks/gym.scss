@@ -177,6 +177,13 @@
   }
 }
 
+
+.gym__video-wrapper.gym__video-wrapper--active {
+  &::before {
+    display: none;
+  }
+}
+
 .gym__video-wrapper video {
   position: absolute;
   top: 0;
