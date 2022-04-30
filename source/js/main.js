@@ -26,8 +26,10 @@ videoMobile.addEventListener('play', () => {
 videoBtn.addEventListener('click', () => {
 
   if (mediaQueryMobile.matches) {
+    video.pause();
     videoMobile.play();
   } else {
+    videoMobile.pause();
     video.play();
   }
 });
