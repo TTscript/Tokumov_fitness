@@ -7,31 +7,17 @@ const videoMobile = document.querySelector('[data-name="video-mobile"]');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 const gym = document.querySelector('.gym');
 
-video.addEventListener('pause', () => {
-  videoBtnWrapper.style.display = 'block';
-});
-
-videoMobile.addEventListener('pause', () => {
-  videoBtnWrapper.style.display = 'block';
-});
-
-video.addEventListener('play', () => {
-  videoBtnWrapper.style.display = 'none';
-});
-
-videoMobile.addEventListener('play', () => {
-  videoBtnWrapper.style.display = 'none';
-});
+let isPlaying = video.currentTime > 0 && !video.paused && !video.ended && video.readyState > video.HAVE_CURRENT_DATA;
 
 videoBtn.addEventListener('click', () => {
-
-  if (mediaQueryMobile.matches) {
-    video.pause();
-    videoMobile.play();
-  } else {
-    videoMobile.pause();
+  if (!isPlaying) {
     video.play();
   }
+  // if (mediaQueryMobile.matches) {
+  //   videoMobile.play();
+  // } else {
+  //   video.play();
+  // }
 });
 
 videoWrapper.addEventListener('mouseover', () => {
