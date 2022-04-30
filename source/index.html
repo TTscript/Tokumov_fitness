@@ -69,8 +69,10 @@
           <div class="gym__picture"></div>
         </div>
         <div class="gym__video-wrapper">
-          <video src="video/video.mp4" type="video/mp4" poster="img/desktop/video-preview.png" width="364" height="228" data-name="video-desktop" controls>
-          </video>
+          <video poster="img/desktop/video-preview.png" width="364" height="228" data-name="video-desktop" controls>
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.ogg" type="video/ogg">
+          </video >
         </div>
       </section>
       <section id="passes" class="passes">
