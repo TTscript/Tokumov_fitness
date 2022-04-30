@@ -7,14 +7,24 @@ const videoMobile = document.querySelector('[data-name="video-mobile"]');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 const gym = document.querySelector('.gym');
 
-let isPlaying;
+video.addEventListener('pause', () => {
+  videoBtnWrapper.style.display = 'block';
+});
+
+videoMobile.addEventListener('pause', () => {
+  videoBtnWrapper.style.display = 'block';
+});
+
+video.addEventListener('play', () => {
+  videoBtnWrapper.style.display = 'none';
+});
+
+videoMobile.addEventListener('play', () => {
+  videoBtnWrapper.style.display = 'none';
+});
 
 videoBtn.addEventListener('click', () => {
-  if (!isPlaying) {
-    videoBtnWrapper.style.display = 'none';
-  }
 
-  isPlaying = !isPlaying;
   if (mediaQueryMobile.matches) {
     videoMobile.play();
   } else {
