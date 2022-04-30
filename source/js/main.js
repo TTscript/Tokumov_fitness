@@ -1,41 +1,46 @@
 // //////////////////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
-const videoWrapper = document.querySelector('.gym__video-wrapper');
-const video = document.querySelector('.gym__video-wrapper video');
-const videoBtnWrapper = document.querySelector('.gym__video-button-wrapper');
-const videoBtn = document.querySelector('#video-button');
-const videoMobile = document.querySelector('[data-name="video-mobile"]');
+// const videoWrapper = document.querySelector('.gym__video-wrapper');
+// const video = document.querySelector('.gym__video-wrapper video');
+// const videoBtnWrapper = document.querySelector('.gym__video-button-wrapper');
+// const videoBtn = document.querySelector('#video-button');
+// const videoMobile = document.querySelector('[data-name="video-mobile"]');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 const gym = document.querySelector('.gym');
 
+// console.log(video);
+
 // let isPlaying = video.currentTime > 0 && !video.paused && !video.ended && video.readyState > video.HAVE_CURRENT_DATA;
 
-videoBtn.addEventListener('click', () => {
-  // if (!isPlaying) {
-  video.play();
-  // }
-  // if (mediaQueryMobile.matches) {
-  //   videoMobile.play();
-  // } else {
-  //   video.play();
-  // }
-});
+// console.log(video.currentTime);
 
-videoWrapper.addEventListener('mouseover', () => {
-  if (mediaQueryMobile.matches) {
-    videoMobile.setAttribute('controls', '');
-  } else {
-    video.setAttribute('controls', '');
-  }
-});
 
-gym.addEventListener('mouseover', (e) => {
-  if (e.target !== video) {
-    video.removeAttribute('controls');
-  }
-  if (e.target !== videoMobile) {
-    videoMobile.removeAttribute('controls');
-  }
-});
+// videoBtn.addEventListener('click', () => {
+
+//   if (mediaQueryMobile.matches) {
+//     video.pause();
+//     videoMobile.play();
+//   } else {
+//     videoMobile.pause();
+//     video.play();
+//   }
+// });
+
+// videoWrapper.addEventListener('mouseover', () => {
+//   if (mediaQueryMobile.matches) {
+//     videoMobile.setAttribute('controls', '');
+//   } else {
+//     video.setAttribute('controls', '');
+//   }
+// });
+
+// gym.addEventListener('mouseover', (e) => {
+//   if (e.target !== video) {
+//     video.removeAttribute('controls');
+//   }
+//   if (e.target !== videoMobile) {
+//     videoMobile.removeAttribute('controls');
+//   }
+// });
 
 // ///////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
 
