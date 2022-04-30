@@ -72,6 +72,7 @@
   line-height: 49px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  max-width: 375px;
   margin: 0 0 40px;
 
   @media (max-width: $max-tablet) {
@@ -88,6 +89,7 @@
 }
 
 .passes__tabs {
+  max-width: 700px;
   border-bottom: 2px solid $passes-tabs-border-passive;
   margin-bottom: 37px;
 
@@ -169,6 +171,7 @@
   cursor: pointer;
   transition: 1s;
   padding: 55px 0 0;
+  padding: 55px 20px 20px;
   border: 7px solid transparent;
 
   &:last-child {
@@ -345,4 +348,5 @@
   min-height: 64px;
   text-align: center;
   padding-top: 23px;
+  padding: 23px 10px;
 }

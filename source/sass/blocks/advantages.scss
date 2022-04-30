@@ -20,7 +20,8 @@
   line-height: 49px;
   letter-spacing: 0.03em;
   text-align: center;
-  margin: 0 0 62px;
+  max-width: 550px;
+  margin: 0 auto 62px;
 
   @media (max-width: $max-tablet) {
     display: inline-block;

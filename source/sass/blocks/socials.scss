@@ -5,6 +5,7 @@
 
 .socials__inner {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   transform: translate(12px, -4px);

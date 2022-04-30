@@ -291,7 +291,8 @@
   @include robotocondensed-bold();
   font-size: 26px;
   line-height: 32px;
-  margin: 0 0 8px;
+  max-width: 550px;
+  margin: 0 auto 8px;
 
   @media (max-width: $max-mobile) {
     text-align: center;

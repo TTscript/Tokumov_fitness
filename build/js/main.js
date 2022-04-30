@@ -276,6 +276,12 @@ function changePicturesSizes() {
 
 changePicturesSizes();
 
+window.addEventListener('orientationchange', () => {
+  setTimeout(() => {
+    location.reload();
+  }, 1);
+});
+
 ////////////////////////////////////////C O A C H E S   S L I D E R/////////////////////////////////////////////////////////////
 
 const advantagesLeftBlock = document.querySelector('.advantages__left-block');
@@ -467,3 +473,4 @@ shape.onsubmit = function() {
 };
 
 ///////////////////////////////////////////////////////////////V A L I D A T I O N//////////////////////////////////////////////////////////////////////
+

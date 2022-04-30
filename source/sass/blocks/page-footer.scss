@@ -26,6 +26,8 @@
 }
 
 .page-footer__logo {
+  max-width: 120px;
+
   @media (max-width: $max-mobile) {
     margin: 0 30px 14px 0;
   }
@@ -102,6 +104,7 @@
 }
 
 .page-footer li {
+  max-width: 70px;
   margin: 0 40px 0 0;
 
   @media (max-width: $max-tablet) {

@@ -114,6 +114,7 @@
   font-size: 49px;
   line-height: 49px;
   letter-spacing: 0.03em;
+  max-width: 250px;
   padding-left: 36px;
   margin: 0 0 54px;
 
@@ -158,6 +159,7 @@
   margin-right: 40px;
   flex-shrink: 0;
   cursor: pointer;
+  white-space: normal;
 
   &:last-child {
     margin: 0;
