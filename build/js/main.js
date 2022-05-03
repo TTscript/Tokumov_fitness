@@ -1,3 +1,51 @@
+import Swiper from './vendor.js';
+
+const coachesSwiper = new Swiper('.coaches__slider', {
+  direction: 'horizontal',
+  loop: true,
+  grabCursor: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+    },
+    600: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 40,
+    }
+  },
+  autoHeight: true,
+  onlyInViewport: true,
+});
+
+const swiper = new Swiper('.reviews__slider', {
+  direction: 'horizontal',
+  loop: false,
+  grabCursor: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  onlyInViewport: true,
+});
+
 // //////////////////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
 const videoWrapper = document.querySelector('.gym__video-wrapper');
 const video = document.querySelector('.gym__video-wrapper video');
@@ -122,11 +170,13 @@ changePassesBlock();
 ////////////////////////////////////////C O A C H E S   S L I D E R/////////////////////////////////////////////////////////////
 
 const coachesSlider = document.querySelector('.coaches__slider');
-const coachesLine = document.querySelector('.coaches__line');
+// const coachesLine = document.querySelector('.coaches__line');
 const coachesCard = document.querySelectorAll('.coaches__person-card');
 const coachesImages = document.querySelectorAll('.coaches__person-card img');
 const coachesLeftArrow = document.querySelector('#coaches-left-arrow');
 const coachesRightArrow = document.querySelector('#coaches-right-arrow');
+const coachesSwiperPrev = document.querySelector('.coaches__slider .swiper-button-prev');
+const coachesSwiperNext = document.querySelector('.coaches__slider .swiper-button-next');
 
 coachesCard.forEach((item) => {
   item.addEventListener('click', () => {
@@ -134,101 +184,26 @@ coachesCard.forEach((item) => {
   });
 });
 
-let leftArrow = 0;
-let rightArrow = 0;
-let leftArrowClick = false;
-let rightArrowClick = false;
+// let leftArrow = 0;
+// let rightArrow = 0;
+// let leftArrowClick = false;
+// let rightArrowClick = false;
 
-window.addEventListener('resize', setCoachesSlider);
+// window.addEventListener('resize', setCoachesSlider);
 
-function setCoachesSlider() {
-  setTimeout(() => {
-    coachesLine.style.transform = 'translate(0)';
-  }, 500);
-}
+// function setCoachesSlider() {
+//   setTimeout(() => {
+//     coachesLine.style.transform = 'translate(0)';
+//   }, 500);
+// }
 
 coachesLeftArrow.addEventListener('click', () => {
-  const imgSize = document.querySelector('.coaches__person-card img').offsetWidth;
-
-  let flipSize;
-  let commonSize;
-  if (window.matchMedia('(min-width: 1024px)').matches) {
-    flipSize = (imgSize * 4) + 160;
-    commonSize = (flipSize * 2);
-  } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
-    flipSize = (imgSize * 2) + 62;
-    commonSize = (flipSize * 6) - flipSize;
-  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
-    flipSize = (imgSize * 2) + 20;
-    commonSize = (flipSize * 6) - flipSize;
-  } else if (window.matchMedia('(max-width: 599px)')) {
-    flipSize = imgSize + 10;
-    commonSize = (flipSize * 12) - flipSize;
-  }
-
-  leftArrowClick = true;
-  setTimeout(() => {
-    rightArrowClick = false;
-  }, 50);
-  leftArrow = leftArrow - flipSize;
-
-  function getTranslateX() {
-    const style = window.getComputedStyle(coachesLine);
-    const matrix = new DOMMatrixReadOnly(style.transform).m41;
-    return matrix;
-  }
-
-  if (getTranslateX() >= 0) {
-    leftArrow = commonSize;
-  } else if (rightArrowClick === true) {
-    leftArrow = 0;
-  }
-
-  coachesLine.style.transform = `translateX(${-(leftArrow)}px)`;
+  coachesSwiperPrev.click();
 });
 
 coachesRightArrow.addEventListener('click', () => {
-  const imgSize = document.querySelector('.coaches__person-card img').offsetWidth;
-
-  let flipSize;
-  let commonSize;
-  if (window.matchMedia('(min-width: 1024px)').matches) {
-    flipSize = (imgSize * 4) + 160;
-    commonSize = (flipSize * 2);
-  } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
-    flipSize = (imgSize * 2) + 62;
-    commonSize = (flipSize * 6) - flipSize;
-  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
-    flipSize = (imgSize * 2) + 20;
-    commonSize = (flipSize * 6) - flipSize;
-  } else if (window.matchMedia('(max-width: 599px)')) {
-    flipSize = imgSize + 10;
-    commonSize = (flipSize * 12) - flipSize;
-  }
-
-  rightArrowClick = true;
-
-  setTimeout(() => {
-    leftArrowClick = false;
-  }, 50);
-
-  rightArrow = rightArrow - flipSize;
-
-  function getTranslateX() {
-    const style = window.getComputedStyle(coachesLine);
-    const matrix = new DOMMatrixReadOnly(style.transform).m41;
-    return matrix;
-  }
-
-  if (getTranslateX() <= -commonSize) {
-    rightArrow = 0;
-  } else if (leftArrowClick === true && getTranslateX() < 0) {
-    rightArrow = 0;
-  }
-
-  coachesLine.style.transform = `translateX(${(rightArrow)}px)`;
+  coachesSwiperNext.click();
 });
-
 
 window.addEventListener('resize', () => {
   changePicturesSizes();
@@ -370,57 +345,23 @@ function addLogoToList() {
 
 addLogoToList();
 
-window.addEventListener('resize', setCoachesSlider);
+// window.addEventListener('resize', setCoachesSlider);
+
+///////////////////////////////////////////////////////////////R E V I E W S     S L I D E R//////////////////////////////////////////////////////////////////////
+const reviewsSwiperPrev = document.querySelector('.reviews__slider .swiper-button-prev');
+const reviewsSwiperNext = document.querySelector('.reviews__slider .swiper-button-next');
+
 
 reviewsLeftButton.addEventListener('click', () => {
-  const flipSize = review.offsetWidth;
-
-  leftArrowClick = true;
-  setTimeout(() => {
-    rightArrowClick = false;
-  }, 50);
-  leftArrow = leftArrow - flipSize;
-
-  function getTranslateX() {
-    const style = window.getComputedStyle(reviewsLine);
-    const matrix = new DOMMatrixReadOnly(style.transform).m41;
-    return matrix;
-  }
-
-  if (getTranslateX() >= 0) {
-    leftArrow = flipSize * 2;
-  } else if (rightArrowClick === true) {
-    leftArrow = 0;
-  }
-
-  reviewsLine.style.transform = `translateX(${-(leftArrow)}px)`;
+  reviewsSwiperPrev.click();
 });
 
 reviewsRightButton.addEventListener('click', () => {
-  const flipSize = review.offsetWidth;
-
-  rightArrowClick = true;
-
-  setTimeout(() => {
-    leftArrowClick = false;
-  }, 50);
-
-  rightArrow = rightArrow - flipSize;
-
-  function getTranslateX() {
-    const style = window.getComputedStyle(reviewsLine);
-    const matrix = new DOMMatrixReadOnly(style.transform).m41;
-    return matrix;
-  }
-
-  if (getTranslateX() <= -flipSize * 2) {
-    rightArrow = 0;
-  } else if (leftArrowClick === true && getTranslateX() < 0) {
-    rightArrow = 0;
-  }
-
-  reviewsLine.style.transform = `translateX(${(rightArrow)}px)`;
+  reviewsSwiperNext.click();
 });
+
+///////////////////////////////////////////////////////////////R E V I E W S     S L I D E R//////////////////////////////////////////////////////////////////////
+
 
 ///////////////////////////////////////////////////////////////V A L I D A T I O N//////////////////////////////////////////////////////////////////////
 

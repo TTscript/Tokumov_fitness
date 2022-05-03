@@ -235,8 +235,9 @@
   padding: 17px;
 
   &:hover {
-    border: 4px solid $main-block-button-hover;
-    color: $main-block-button-hover;
+    border: 4px solid $basic-white;
+    background-color: $basic-white;
+    color: $main-block-phone-number-hover;
   }
 
   &:active {
