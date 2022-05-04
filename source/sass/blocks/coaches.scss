@@ -3,10 +3,10 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0;
-  margin-bottom: 115px;
+  margin-bottom: 121px;
 
   @media (max-width: $max-tablet) {
-    margin-bottom: 90px;
+    margin-bottom: 97px;
   }
 
   @media (max-width: $max-mobile) {
@@ -122,7 +122,8 @@
     font-size: 42px;
     line-height: 42px;
     text-align: center;
-    margin: 0 0 43px;
+    padding-left: 0;
+    margin: 0 auto 43px;
   }
 
   @media (max-width: $max-mobile) {
@@ -136,6 +137,7 @@
 .coaches__slider {
   width: 100%;
   max-width: 1162px;
+  height: 294px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -151,8 +153,6 @@
 }
 
 .coaches__line {
-  // display: flex;
-  // transition: all 0.4s;
   position: relative;
   width: 100%;
   height: 100%;
@@ -164,21 +164,34 @@
 
 .coaches__person-card {
   position: relative;
-  // margin-right: 40px;
   flex-shrink: 0;
   cursor: pointer;
   white-space: normal;
+  margin: 0;
 
   &:last-child {
     margin: 0;
   }
+}
+
+.coaches__person-card > h3 {
+  @include robotocondensed-bold();
+  font-size: 18px;
+  line-height: 27px;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media (max-width: $max-tablet) {
-    // margin-right: 31px;
+    bottom: 28px;
+    left: 51%;
   }
+}
 
-  @media (max-width: $max-mobile) {
-    // margin-right: 10px;
+.coaches__person-card:hover > h3 {
+  @media (min-width: $desktop) {
+    display: none;
   }
 }
 
@@ -186,6 +199,7 @@
   vertical-align: top;
   width: 260px;
   height: 294px;
+  width: 100%;
 
   @media (max-width: $max-tablet) {
     width: 268px;
@@ -198,35 +212,19 @@
   }
 }
 
-// .coaches__person-card:hover {
-//   @media (min-width: 1024px) {
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       background-color: $basic-color;
-//       width: 100%;
-//       height: 100%;
-//       opacity: 0.89;
-//     }
-//   }
-// }
-
 .coaches__experience {
   display: none;
   position: absolute;
   top: 0;
   left: 0;
-  // width: 100%;
   height: 100%;
   background-color: $coaches-background;
   text-align: center;
   padding: 52px 44px 10px;
 
-  &:hover {
-    display: block;
-  }
+  // &:hover {
+  //   display: block;
+  // }
 
   @media (max-width: 1250px) {
     padding: 15px;
@@ -244,11 +242,16 @@
     padding: 23px 33px 40px 38px;
   }
 
-  @media (max-width: 600px) {
-    padding: 43px 33px 40px 38px;
+  // @media (max-width: 600px) {
+  //   padding: 43px 2px 40px 0;
+  // }
+
+  // @media (min-width: 351px) and (max-width: )
+
+  @media (max-width: 350px) {
+    padding: 43px 2px 40px 0;
   }
 }
-
 
 .coaches__person-card:hover .coaches__experience {
   @media (min-width: $desktop) {
@@ -256,145 +259,52 @@
   }
 }
 
-// .coaches__person-card.coaches__person-card--active {
-//   @media (max-width: 1023px) {
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       background-color: $basic-color;
-//       width: 100%;
-//       height: 100%;
-//       opacity: 0.89;
-//     }
-//   }
-// }
-
 .coaches__person-card h3 {
   @include robotocondensed-bold();
-  // position: absolute;
-  // bottom: 27px;
-  // left: 50%;
   font-size: 18px;
   line-height: 23px;
   color: $basic-white;
-  // transform: translateX(-50%);
   white-space: nowrap;
   margin: 0;
 }
 
-// .coaches__person-card:hover h3 {
-//   @media (min-width: 1024px) {
-//     bottom: 220px;
-//   }
-
-//   @media (min-width: $max-desktop) and (max-width: 1155px) {
-//     bottom: 202px;
-//   }
-// }
-
-// .coaches__person-card.coaches__person-card--active h3 {
-//   @media (max-width: 1023px) {
-//     bottom: 202px;
-//   }
-// }
-
 .coaches__person-card p {
-  // display: none;
-    @include robotocondensed-regular();
-    font-size: 16px;
-    line-height: 24px;
-    color: $basic-white;
-    display: block;
-    // position: absolute;
-    // bottom: 199px;
-    // left: 50%;
-    // transform: translateX(-50%);
-    margin: 0 0 30px;
-
-    // @media (max-width: 1155px) {
-    //   bottom: 179px;
-    // }
+  @include robotocondensed-regular();
+  font-size: 16px;
+  line-height: 24px;
+  color: $basic-white;
+  display: block;
+  margin: 0 0 30px;
 }
-
-// .coaches__person-card.coaches__person-card--active p {
-//   @media (max-width: $max-tablet) {
-//     @include robotocondensed-regular();
-//     font-size: 16px;
-//     line-height: 24px;
-//     color: $basic-white;
-//     display: block;
-//     position: absolute;
-//     bottom: 199px;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     margin: 0;
-
-//     @media (max-width: 1155px) {
-//       bottom: 179px;
-//     }
-//   }
-// }
 
 .coaches__person-card ul {
-  // display: none;
-      @include robotocondensed-regular();
-      font-size: 14px;
-      line-height: 26px;
-      color: $basic-white;
-      display: block;
-      text-align: left;
-      // position: absolute;
-      // left: 73px;
-      // bottom: 57px;
-      // min-width: 135px;
-      list-style: none;
-      padding: 0;
-      padding: 0 0 0 27px;
-      margin: 0;
+  @include robotocondensed-regular();
+  font-size: 14px;
+  line-height: 26px;
+  color: $basic-white;
+  display: block;
+  text-align: left;
+  list-style: none;
+  padding: 0 0 0 27px;
+  margin: 0;
 
-      @media (max-width: $max-tablet) {
-        padding: 0 0 0 37px;
-      }
+  @media (max-width: $max-tablet) {
+    padding: 0 0 0 37px;
+  }
 
-      @media (max-width: $max-mobile) {
-        padding: 0 0 0 16px;
-        min-width: 180px;
-      }
+  @media (max-width: $max-mobile) {
+    padding: 0 0 0 16px;
+    min-width: 180px;
+  }
 
-      // @media (max-width: 1155px) {
-      //   bottom: 42px;
-      //   left: 53px;
-      // }
+  @media (max-width: 350px) {
+    padding: 0 0 0 54px;
+  }
 }
-
-
-
-// .coaches__person-card.coaches__person-card--active ul {
-//   @media (max-width: 1023px) {
-//     @include robotocondensed-regular();
-//     font-size: 14px;
-//     line-height: 26px;
-//     color: $basic-white;
-//     display: block;
-//     position: absolute;
-//     left: 73px;
-//     bottom: 57px;
-//     min-width: 135px;
-//     padding: 0;
-//     margin: 0;
-
-//     @media (max-width: 1155px) {
-//       bottom: 42px;
-//       left: 53px;
-//     }
-//   }
-// }
 
 .coaches__person-card li {
   position: relative;
-  margin-bottom: 9px;
+  margin-bottom: 6px;
 
   &::before {
     content: "";

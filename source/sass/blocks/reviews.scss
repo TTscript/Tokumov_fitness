@@ -27,7 +27,7 @@
   @media (max-width: $max-tablet) {
     font-size: 42px;
     line-height: 42px;
-    margin: 0 0 43px;
+    margin: 0 auto 43px;
   }
 
   @media (max-width: $max-mobile) {
@@ -38,7 +38,7 @@
 
 .reviews__container {
   display: flex;
-  max-width: 623px;
+  justify-content: center;
   max-width: 560px;
   margin: 0 auto;
 }
@@ -170,6 +170,7 @@
       display: inline-block;
       vertical-align: middle;
       position: unset;
+      transform: translate(-10px, 5px);
     }
 
     @media (max-width: 480px) {
@@ -186,11 +187,11 @@
     padding-left: 41px;
     margin: 0 0 7px;
   }
-}
 
-// .reviews__review span {
-//   transform: translateX(15px)
-// }
+  @media (max-width: 480px) {
+    transform: translateX(10px);
+  }
+}
 
 .reviews__review p {
   @include robotocondensed-regular();

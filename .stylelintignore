@@ -1,1 +1,3 @@
 source/sass/global/normalize.scss
+source/sass/blocks/navigation.scss
+source/sass/blocks/swiper.scss

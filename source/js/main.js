@@ -1,5 +1,9 @@
 import Swiper from './vendor.js';
 
+const sliderMediaDesktop = window.matchMedia('(min-width: 1024px)');
+const sliderMediaTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+const sliderMediaMobile = window.matchMedia('(min-width: 320px) and (max-width: 600px)');
+
 const coachesSwiper = new Swiper('.coaches__slider', {
   direction: 'horizontal',
   loop: true,
@@ -26,13 +30,20 @@ const coachesSwiper = new Swiper('.coaches__slider', {
       slidesPerView: 4,
       slidesPerGroup: 4,
       spaceBetween: 40,
+    },
+    1300: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 40,
     }
   },
   autoHeight: true,
   onlyInViewport: true,
 });
 
-const swiper = new Swiper('.reviews__slider', {
+coachesSwiper.slideTo(1);
+
+new Swiper('.reviews__slider', {
   direction: 'horizontal',
   loop: false,
   grabCursor: true,
@@ -45,6 +56,22 @@ const swiper = new Swiper('.reviews__slider', {
   },
   onlyInViewport: true,
 });
+
+window.addEventListener('resize', () => {
+  slideImages();
+});
+
+function slideImages() {
+  if (sliderMediaDesktop.matches) {
+    coachesSwiper.slideTo(1);
+  } else if (sliderMediaTablet.matches) {
+    coachesSwiper.slideTo(1);
+  } else if (sliderMediaMobile.matches) {
+    coachesSwiper.slideTo(3);
+  }
+}
+
+slideImages();
 
 // //////////////////////////////////////////////////////////////////////V I D E O//////////////////////////////////////////////////////////////////////////////////////////////////
 const videoWrapper = document.querySelector('.gym__video-wrapper');
@@ -220,7 +247,7 @@ function changePicturesSizes() {
     coachesSlider.style.maxWidth = '1162px';
     coachesSlider.style.width = `${width / 1.1}px`;
     coachesImages.forEach((item) => {
-      item.style.width = `${width / 5}px`;
+      item.style.width = `${width / 5}px !important`;
       item.style.height = 'auto';
     });
   } else if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
@@ -229,12 +256,12 @@ function changePicturesSizes() {
       item.style.width = `${width / 2.9}px`;
       item.style.height = 'auto';
     });
-  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
-    coachesSlider.style.maxWidth = `${width / 1.5}px`;
-    coachesImages.forEach((item) => {
-      item.style.width = `${width / 3.1}px`;
-      item.style.height = 'auto';
-    });
+  // } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
+  //   coachesSlider.style.maxWidth = `${width / 1.5}px`;
+  //   coachesImages.forEach((item) => {
+  //     item.style.width = `${width / 3.1}px`;
+  //     item.style.height = 'auto';
+  //   });
   } else if (window.matchMedia('(min-width: 350px) and (max-width: 599px)').matches) {
     coachesSlider.style.maxWidth = `${width / 1.7}px`;
     coachesImages.forEach((item) => {
@@ -255,6 +282,7 @@ changePicturesSizes();
 window.addEventListener('orientationchange', () => {
   setTimeout(() => {
     location.reload();
+    // changePicturesSizes();
   }, 1);
 });
 
