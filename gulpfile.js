@@ -88,7 +88,7 @@ function copyFonts() {
 }
 
 function js() {
-  return src('source/js/**/*.js')
+  return src('source/js/**/*.{js,map}')
     .pipe(dest('build/js'));
 }
 

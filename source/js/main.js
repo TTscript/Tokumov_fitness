@@ -211,19 +211,6 @@ coachesCard.forEach((item) => {
   });
 });
 
-// let leftArrow = 0;
-// let rightArrow = 0;
-// let leftArrowClick = false;
-// let rightArrowClick = false;
-
-// window.addEventListener('resize', setCoachesSlider);
-
-// function setCoachesSlider() {
-//   setTimeout(() => {
-//     coachesLine.style.transform = 'translate(0)';
-//   }, 500);
-// }
-
 coachesLeftArrow.addEventListener('click', () => {
   coachesSwiperPrev.click();
 });
@@ -282,8 +269,7 @@ changePicturesSizes();
 window.addEventListener('orientationchange', () => {
   setTimeout(() => {
     location.reload();
-    // changePicturesSizes();
-  }, 1);
+  }, 500);
 });
 
 ////////////////////////////////////////C O A C H E S   S L I D E R/////////////////////////////////////////////////////////////
