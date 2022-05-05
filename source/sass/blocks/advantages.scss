@@ -84,7 +84,7 @@
 
 .advantages__left-block {
   max-width: 350px;
-  margin-right: 56px;
+  margin-right: 54px;
 
   @media (max-width: 1100px) {
     margin-right: 20px;
@@ -254,10 +254,9 @@
 .advantages__center-block p {
   text-align: center;
   color: $basic-white;
-  max-width: 170px;
+  max-width: 200px;
 
   @media (max-width: $max-tablet) {
-    max-width: 220px;
     padding-right: 14px;
   }
 }
@@ -306,7 +305,7 @@
   @include robotocondensed-regular();
   font-size: 14px;
   line-height: 18px;
-  margin-right: 14px;
+  margin-right: 16px;
 
   @media (max-width: $max-mobile) {
     margin-right: 0;
@@ -340,7 +339,7 @@
   @include robotocondensed-regular();
   font-size: 14px;
   line-height: 18px;
-  margin-right: 14px;
+  margin-right: 16px;
 
   @media (max-width: $max-mobile) {
     margin: 0 0 5px;

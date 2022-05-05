@@ -156,11 +156,11 @@
   }
 
   @media (max-width: 1250px) {
-    left: calc((1163px - 100vw));
+    left: calc(1016px - 100vw);
   }
 
   @media (max-width: $max-tablet) {
-    top: 352px;
+    top: 345px;
     left: 0;
     width: 266px;
     height: 167px;
@@ -172,6 +172,7 @@
   }
 
   @media (max-width: 350px) {
+    top: 352px;
     transform: translate(0);
     width: 100%;
   }

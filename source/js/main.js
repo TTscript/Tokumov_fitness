@@ -55,6 +55,8 @@ new Swiper('.reviews__slider', {
     el: '.swiper-scrollbar',
   },
   onlyInViewport: true,
+  autoHeight: true,
+  preloadImages: true,
 });
 
 window.addEventListener('resize', () => {
@@ -302,6 +304,16 @@ const reviewsLine = document.querySelector('.reviews__line');
 const reviewsLeftButton = document.querySelector('#reviews-left-arrow');
 const reviewsRightButton = document.querySelector('#reviews-right-arrow');
 const reviewsSlider = document.querySelector('.reviews__slider');
+const reviewHeading = review.querySelector('span');
+const reviewParagraph = review.querySelector('p');
+
+reviewHeading.addEventListener('DOMCharacterDataModified', () => {
+  reviewsSlider.style.height = `${review.offsetHeight}px`;
+});
+
+reviewParagraph.addEventListener('DOMCharacterDataModified', () => {
+  reviewsSlider.style.height = `${review.offsetHeight}px`;
+});
 
 window.addEventListener('resize', () => {
   setTimeout(() => {
@@ -364,7 +376,6 @@ addLogoToList();
 ///////////////////////////////////////////////////////////////R E V I E W S     S L I D E R//////////////////////////////////////////////////////////////////////
 const reviewsSwiperPrev = document.querySelector('.reviews__slider .swiper-button-prev');
 const reviewsSwiperNext = document.querySelector('.reviews__slider .swiper-button-next');
-
 
 reviewsLeftButton.addEventListener('click', () => {
   reviewsSwiperPrev.click();
