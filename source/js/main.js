@@ -21,7 +21,7 @@ const coachesSwiper = new Swiper('.coaches__slider', {
       slidesPerGroup: 1,
       spaceBetween: 10,
     },
-    600: {
+    650: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 30,
@@ -420,7 +420,7 @@ shape.onsubmit = function() {
     phoneWrapper.classList.remove('shape__error');
   }
 
-  if (telVal === '' || telVal.length < 17) {
+  if (telVal === '' || telVal.length < 11) {
     phoneWrapper.classList.add('shape__error');
     return false;
   } else {

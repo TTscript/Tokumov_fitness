@@ -123,11 +123,15 @@
 
 .reviews__slider {
   max-width: 566px;
-  max-height: 242px;
+  min-height: 242px;
   overflow: hidden;
 
   @media (max-width: 680px) {
     max-height: unset;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 226px;
   }
 }
 
@@ -139,6 +143,7 @@
 .reviews__review {
   background: $reviews-background;
   max-width: 560px;
+  height: unset !important;
   min-height: 242px;
   flex-shrink: 0;
   margin: 0 auto;

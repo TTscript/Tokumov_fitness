@@ -3,7 +3,7 @@
   flex: 1;
   border-top: 1px solid $contacts-border;
 
-  @media (max-height: $max-tablet) {
+  @media (max-width: $max-tablet) {
     width: 100%;
   }
 }

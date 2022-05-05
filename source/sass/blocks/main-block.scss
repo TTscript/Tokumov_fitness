@@ -87,6 +87,10 @@
   @media (max-width: 1218px) {
     transform: unset;
   }
+
+  @media (max-width: $max-mobile) {
+    max-width: 330px;
+  }
 }
 
 .main-block__text-block {

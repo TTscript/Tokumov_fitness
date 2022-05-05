@@ -1,13 +1,12 @@
 .gym {
-  padding: 0 45px;
+  padding: 0 45px 229px 45px;
 
   @media (max-width: $max-tablet) {
-    padding-bottom: 16px;
+    padding-bottom: 182px;
   }
 
   @media (max-width: $max-mobile) {
-    padding: 0;
-    padding-bottom: 70px;
+    padding: 0 0 236px;
   }
 }
 
@@ -30,7 +29,7 @@
   padding: 44px 0 0 60px;
 
   @media (max-width: $max-tablet) {
-    max-width: 502px;
+    max-width: 510px;
     text-align: center;
     padding: 0;
     margin-bottom: 38px;
@@ -129,8 +128,8 @@
 
 .gym__video-wrapper {
   position: relative;
-  top: 0;
-  left: 0;
+  top: 401px;
+  left: -253px;
   width: 364px;
   height: 228px;
   text-align: center;
@@ -156,11 +155,12 @@
     }
   }
 
-  @media (max-width: 1170px) {
+  @media (max-width: 1250px) {
     left: calc((1163px - 100vw));
   }
 
   @media (max-width: $max-tablet) {
+    top: 352px;
     left: 0;
     width: 266px;
     height: 167px;

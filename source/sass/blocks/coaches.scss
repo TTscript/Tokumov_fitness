@@ -150,6 +150,10 @@
   @media (max-width: $max-mobile) {
     max-width: 226px;
   }
+
+  @media (min-width: 600px) and (max-width: $max-mobile) {
+    min-width: 500px;
+  }
 }
 
 .coaches__line {
@@ -171,6 +175,10 @@
 
   &:last-child {
     margin: 0;
+  }
+
+  @media (max-width: $max-mobile) {
+    text-align: center;
   }
 }
 
@@ -197,7 +205,6 @@
 
 .coaches__person-card img {
   vertical-align: top;
-  width: 260px;
   height: 294px;
   width: 100%;
 
@@ -220,11 +227,13 @@
   height: 100%;
   background-color: $coaches-background;
   text-align: center;
+  overflow: scroll;
   padding: 52px 44px 10px;
 
-  // &:hover {
-  //   display: block;
-  // }
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 
   @media (max-width: 1250px) {
     padding: 15px;
@@ -241,12 +250,6 @@
   @media (max-width: 680px) {
     padding: 23px 33px 40px 38px;
   }
-
-  // @media (max-width: 600px) {
-  //   padding: 43px 2px 40px 0;
-  // }
-
-  // @media (min-width: 351px) and (max-width: )
 
   @media (max-width: 350px) {
     padding: 43px 2px 40px 0;
