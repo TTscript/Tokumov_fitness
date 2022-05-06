@@ -200,12 +200,16 @@ changePassesBlock();
 
 const coachesSlider = document.querySelector('.coaches__slider');
 // const coachesLine = document.querySelector('.coaches__line');
+const coachesSingleCard = document.querySelector('.coaches__person-card');
 const coachesCard = document.querySelectorAll('.coaches__person-card');
 const coachesImages = document.querySelectorAll('.coaches__person-card img');
 const coachesLeftArrow = document.querySelector('#coaches-left-arrow');
 const coachesRightArrow = document.querySelector('#coaches-right-arrow');
 const coachesSwiperPrev = document.querySelector('.coaches__slider .swiper-button-prev');
 const coachesSwiperNext = document.querySelector('.coaches__slider .swiper-button-next');
+const coachesExperiences = document.querySelectorAll('.coaches__experience');
+console.log(coachesSingleCard.offsetWidth);
+console.log(coachesCard.forEach(item => console.log(item.offsetWidth)));
 
 coachesCard.forEach((item) => {
   item.addEventListener('click', () => {
@@ -245,12 +249,23 @@ function changePicturesSizes() {
       item.style.width = `${width / 2.9}px`;
       item.style.height = 'auto';
     });
-  // } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
-  //   coachesSlider.style.maxWidth = `${width / 1.5}px`;
-  //   coachesImages.forEach((item) => {
-  //     item.style.width = `${width / 3.1}px`;
-  //     item.style.height = 'auto';
-  //   });
+  } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
+    // coachesSlider.style.maxWidth = `${width / 1.5}px`;
+    // coachesImages.forEach((item) => {
+    //   item.style.width = `${width / 3.1}px`;
+    //   item.style.height = 'auto';
+    // });
+    if (coachesSingleCard.style.width === '500px') {
+      coachesExperiences.forEach((item) => {
+        item.style.left = '74px';
+        item.style.minWidth = '350px';
+      });
+    } else {
+      coachesExperiences.forEach((item) => {
+        item.style.left = '0';
+        item.style.minWidth = 'unset';
+      });
+    }
   } else if (window.matchMedia('(min-width: 350px) and (max-width: 599px)').matches) {
     coachesSlider.style.maxWidth = `${width / 1.7}px`;
     coachesImages.forEach((item) => {

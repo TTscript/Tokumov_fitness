@@ -228,12 +228,16 @@
   background-color: $coaches-background;
   text-align: center;
   overflow: scroll;
-  padding: 52px 44px 10px;
+  padding: 0;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
+  @media (min-width: 600px) and (max-width: $max-mobile) {
+    left: 74px;
+    min-width: 350px;
   }
+}
+
+.coaches__experience-inner {
+  padding: 52px 44px 10px;
 
   @media (max-width: 1250px) {
     padding: 15px;
@@ -255,6 +259,7 @@
     padding: 43px 2px 40px 0;
   }
 }
+
 
 .coaches__person-card:hover .coaches__experience {
   @media (min-width: $desktop) {
