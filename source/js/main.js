@@ -208,8 +208,6 @@ const coachesRightArrow = document.querySelector('#coaches-right-arrow');
 const coachesSwiperPrev = document.querySelector('.coaches__slider .swiper-button-prev');
 const coachesSwiperNext = document.querySelector('.coaches__slider .swiper-button-next');
 const coachesExperiences = document.querySelectorAll('.coaches__experience');
-console.log(coachesSingleCard.offsetWidth);
-console.log(coachesCard.forEach(item => console.log(item.offsetWidth)));
 
 coachesCard.forEach((item) => {
   item.addEventListener('click', () => {
@@ -250,11 +248,6 @@ function changePicturesSizes() {
       item.style.height = 'auto';
     });
   } else if (window.matchMedia('(min-width: 600px) and (max-width: 767px)').matches) {
-    // coachesSlider.style.maxWidth = `${width / 1.5}px`;
-    // coachesImages.forEach((item) => {
-    //   item.style.width = `${width / 3.1}px`;
-    //   item.style.height = 'auto';
-    // });
     if (coachesSingleCard.style.width === '500px') {
       coachesExperiences.forEach((item) => {
         item.style.left = '74px';
@@ -456,3 +449,6 @@ shape.onsubmit = function() {
 
 ///////////////////////////////////////////////////////////////V A L I D A T I O N//////////////////////////////////////////////////////////////////////
 
+window.addEventListener('click', (e) => {
+  console.log(e.target);
+});

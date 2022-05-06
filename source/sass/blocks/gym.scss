@@ -109,7 +109,7 @@
   min-height: 401px;
   background: $gym-picture url("../img/desktop/gym.png") no-repeat;
   background-size: cover;
-  z-index: -2;
+  z-index: 2;
 
   @media (max-width: $max-tablet) {
     background: $gym-picture url("../img/tablet/gym.png") no-repeat;
